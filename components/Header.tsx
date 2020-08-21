@@ -1,15 +1,17 @@
 import Link from 'next/link';
+import Avatar from '../assets/images/avatar.png';
+import Container from '../components/Container';
 
 const Header = () => {
   return <header className="py-6 md:py-8 lg:py-10">
-    <div className="container mx-auto max-w-4xl px-6 md:px-8 lg:px-6">
+    <Container>
       <div className="flex justify-between items-center">
         <Link href="/">
-          <a className="w-24 mr-4 md:mr-8 fill-current text-primary-500">
-            <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 72.28 75.44">
-              <path d="M46.08,5.29,17.65,12.51a19.57,19.57,0,0,0-14.75,19V51.18A19.56,19.56,0,0,0,22.47,70.74H49.82A19.56,19.56,0,0,0,69.38,51.18V23.4A18.69,18.69,0,0,0,46.08,5.29Zm.62,42.14L35.43,59.21a5.36,5.36,0,0,1-7.57.17h0a5.38,5.38,0,0,1-.17-7.58l7.56-7.9a5.35,5.35,0,0,0-.16-7.57l-7.91-7.56A5.35,5.35,0,0,1,27,21.2h0A5.36,5.36,0,0,1,34.58,21L46.36,32.29,50.23,36a5.36,5.36,0,0,1,.17,7.57Z" fill-rule="even-odd"/>
-              <path d="M70.4,35.81,58.52,10.7A18.7,18.7,0,0,0,29.71,4.29L7.1,23A19.56,19.56,0,0,0,1.88,46.43l8.43,17.82a19.57,19.57,0,0,0,26.05,9.31l24.72-11.7A19.56,19.56,0,0,0,70.4,35.81ZM58.63,47.07c-.5,3-.87,6.24-2.56,8.86-3.46,5.37-11.23,8.49-17.33,9.35-4.81.68-11.49.65-15.56-2.49-9.11-3.89-10.53-18.34-9.91-26.91.6-8.31,4.07-17.73,12.23-19.42a2.12,2.12,0,0,1,.36-.1c12.28-2.07,29.85,4.81,33.29,17.92C60.27,38.55,59.34,42.82,58.63,47.07Z" fill-rule="even-odd" className="opacity-25"/>
+          <a className="p-2 flex flex-row items-center text-primary-300 tracking-wide hover:bg-gray-50 font-bold text-lg rounded-full fill-current transition duration-300 ease-in-out">
+            <svg className="hidden w-6 h-6" viewBox="0 0 72.28 75.44">
+              <path d="M46.08,5.29,17.65,12.51a19.57,19.57,0,0,0-14.75,19V51.18A19.56,19.56,0,0,0,22.47,70.74H49.82A19.56,19.56,0,0,0,69.38,51.18V23.4A18.69,18.69,0,0,0,46.08,5.29Zm.62,42.14L35.43,59.21a5.36,5.36,0,0,1-7.57.17h0a5.38,5.38,0,0,1-.17-7.58l7.56-7.9a5.35,5.35,0,0,0-.16-7.57l-7.91-7.56A5.35,5.35,0,0,1,27,21.2h0A5.36,5.36,0,0,1,34.58,21L46.36,32.29,50.23,36a5.36,5.36,0,0,1,.17,7.57Z" fillRule="evenodd"/>
             </svg>
+            <img className="w-10 rounded-full mr-4" src={Avatar} alt="Avatar of Javier Diaz Chamorro" />
           </a>
         </Link>
         <ul className="flex justify-end items-center">
@@ -46,7 +48,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </Container>
   </header>;
 }
 
