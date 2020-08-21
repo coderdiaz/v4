@@ -5,3 +5,4 @@
 
 .vercel
 .DS_Store
+.env
