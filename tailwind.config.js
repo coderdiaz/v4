@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   purge: [
     './components/**/*.{ts,tsx}',
@@ -167,5 +169,21 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const filterUtilities = {
+        '.grayscale-none': {
+          filter: 'grayscale(0)',
+        },
+        '.grayscale-1': {
+          filter: 'grayscale(1)',
+        },
+      };
+
+      addUtilities(filterUtilities, ['responsive', 'hover']);
+    })
+  ],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 }
