@@ -95,7 +95,6 @@ module.exports = {
     },
     fontFamily: {
       'inter': ['Inter', 'sans-serif'],
-      'fira-sans': ['Fira Sans', 'sans-serif']
     },
     fontSize: {
       xs: '0.5rem',
@@ -116,7 +115,8 @@ module.exports = {
       '7xl': '4.5rem',
       '7.5xl': '4.75rem',
       '8xl': '5rem',
-      '10xl': '6rem'
+      '10xl': '6rem',
+      '12xl': '7rem',
     },
     extend: {
       inset: {
