@@ -15,15 +15,15 @@ const Footer = () => {
             <img className="w-10 rounded-full" src={Avatar} alt="Avatar of Javier Diaz Chamorro" />
           </a>
         </Link>
-        <div className="flex mx-6 justify-between w-full items-center">
-          <ul className="flex items-center -ml-4">
-            <li className="hidden md:block mr-2">
+        <div className="flex mx-6 justify-center md:justify-between w-full items-center">
+          <ul className="hidden md:flex items-center -ml-4">
+            <li className="mr-2">
               <a href={SiteData.social.twitter} className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">Twitter</a>
             </li>
-            <li className="hidden md:block mr-2">
+            <li className="mr-2">
               <a href={SiteData.social.dribbble} className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">Dribbble</a>
             </li>
-            <li className="hidden md:block">
+            <li>
               <a href={SiteData.social.github} className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">GitHub</a>
             </li>
           </ul>
