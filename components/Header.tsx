@@ -15,12 +15,12 @@ const Header = () => {
           </a>
         </Link>
         <ul className="flex justify-end items-center">
-          <li className="hidden md:block mr-2">
+          <li className="hidden mr-2">
             <Link href="/about">
               <a className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">About</a>
             </Link>
           </li>
-          <li className="hidden md:block mr-2">
+          <li className="hidden mr-2">
             <Link href="/blog">
               <a className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">Blog</a>
             </Link>
