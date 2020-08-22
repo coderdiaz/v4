@@ -7,10 +7,11 @@ module.exports = {
       './pages/**/*.{ts,tsx}'
     ],
     options: {
-      whitelist: ['bg-green-400', 'bg-alternative-400', 'bg-gray-400'],
+      whitelist: ['dark-mode', 'bg-green-400', 'bg-alternative-400', 'bg-gray-400'],
     },
   },
   theme: {
+    darkSelector: '.dark-mode',
     colors: {
       transparent: 'transparent',
       black: '#000000',
@@ -176,7 +177,11 @@ module.exports = {
       }
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'hover'],
+    borderColor: ['dark', 'dark-focus', 'dark-focus-within', 'hover'],
+    textColor: ['dark', 'dark-hover', 'dark-active', 'hover']
+  },
   plugins: [
     plugin(function ({ addUtilities }) {
       const filterUtilities = {
@@ -189,7 +194,8 @@ module.exports = {
       };
 
       addUtilities(filterUtilities, ['responsive', 'hover']);
-    })
+    }),
+    require('tailwindcss-dark-mode'),
   ],
   future: {
     removeDeprecatedGapUtilities: true,
