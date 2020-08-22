@@ -38,7 +38,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-2">Now, I'm learning Flutter to create an application to manage my personal finances and web subscriptions. Too, I also share what I learn at meetups and conferences and sometimes I teach about web development.</p>
       </Container>
     </section>
-    <section className="py-5 md:py-10">
+    <section className="hidden py-5 md:py-10">
       <Container>
         <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
         <div className="">
