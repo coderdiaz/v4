@@ -66,7 +66,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
           <Shots shots={shots} />
         </div>
         <div className="py-10 text-center">
-          <a className="inline-flex items-center p-4 md:py-4 md:px-6 rounded-lg text-primary-400 dark:text-primary-300 font-semibold bg-gray-50 lg:bg-transparent lg:hover:bg-gray-50 lg:dark-hover:bg-dark-800 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
+          <a className="inline-flex items-center p-4 md:py-4 md:px-6 rounded-lg text-primary-400 dark:text-primary-300 font-semibold bg-gray-50 lg:bg-transparent lg:hover:bg-gray-50 dark:bg-dark-800 lg:dark:bg-transparent lg:dark-hover:bg-dark-800 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
             <span className="hidden md:inline-flex items-center py-1 px-2 bg-primary-400 dark:bg-primary-300 text-white dark:text-darken text-sm rounded uppercase mr-3 leading-none">New</span>
             <span className="hidden md:inline-flex mr-2 md:mr-4">Discover all shots on Dribbble</span>
             <span className="inline-flex md:hidden mr-2 md:mr-4">Discover more on Dribbble</span>
