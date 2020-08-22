@@ -18,17 +18,17 @@ const Header = () => {
         <ul className="flex justify-end items-center">
           <li className="hidden mr-2">
             <Link href="/about">
-              <a className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">About</a>
+              <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">About</a>
             </Link>
           </li>
           <li className="hidden mr-2">
             <Link href="/blog">
-              <a className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">Blog</a>
+              <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">Blog</a>
             </Link>
           </li>
           <li className="hidden md:block mr-12">
             <Link href="/">
-              <a className="inline-block text-primary-500 hover:text-primary-900 hover:bg-gray-50 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">Home</a>
+              <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">Home</a>
             </Link>
           </li>
           <li className="mr-3 md:-mr-4 items-center">

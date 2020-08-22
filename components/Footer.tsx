@@ -19,16 +19,16 @@ const Footer = () => {
         <div className="flex mx-6 justify-center md:justify-between w-full items-center">
           <ul className="hidden md:flex items-center -ml-4">
             <li className="mr-2">
-              <a href={SiteData.social.twitter} className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">Twitter</a>
+              <a href={SiteData.social.twitter} className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">Twitter</a>
             </li>
             <li className="mr-2">
-              <a href={SiteData.social.dribbble} className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">Dribbble</a>
+              <a href={SiteData.social.dribbble} className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">Dribbble</a>
             </li>
             <li>
-              <a href={SiteData.social.github} className="inline-block text-dark-800 hover:text-black hover:bg-gray-50 rounded font-medium py-2 px-4 transition duration-300 ease-in-out">GitHub</a>
+              <a href={SiteData.social.github} className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">GitHub</a>
             </li>
           </ul>
-          <span className="inline-flex">&copy; 2020 Javier Diaz</span>
+          <span className="inline-flex dark:text-gray-500">&copy; 2020 Javier Diaz</span>
         </div>
         <ul className="flex items-center">
           <li className="mr-3 md:-mr-4 items-center">
