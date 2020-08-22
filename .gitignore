@@ -6,3 +6,4 @@
 .vercel
 .DS_Store
 .env
+yarn-error.log
