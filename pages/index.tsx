@@ -71,6 +71,87 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         </div>
       </Container>
     </section>
+    <section className="py-10">
+      <Container>
+        <h2 className="inline-block font-extrabold text-dark-900 text-xl md:text-2.5xl mb-6">
+          OSS Projects
+        </h2>
+        <div className="-mx-4">
+          <a href="https://github.com/coderdiaz/vue-datasource" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
+            <div className="lg:col-span-3 font-semibold inline-block">
+              <span className="inline-flex mr-2">⏭️</span> Tiny Pagination
+            </div>
+            <p className="lg:col-span-7 text-gray-600">
+              A component to create a tiny pagination using Flexbox
+            </p>
+            <div className="lg:col-span-2 flex items-center justify-start">
+              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
+              <span className="inline-flex text-base text-gray-600">Vue</span>
+            </div>
+          </a>
+          <a href="https://github.com/coderdiaz/react-card-brand" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
+            <div className="lg:col-span-3 font-semibold inline-block">
+              <span className="inline-flex mr-2">💳️</span> Card Brand
+            </div>
+            <p className="lg:col-span-7 text-gray-600">
+              A zero-dependency Hook to show a brand based on card type
+            </p>
+            <div className="lg:col-span-2 flex items-center justify-start">
+              <div className="w-3 h-3 rounded-full bg-alternative-400 mr-2" />
+              <span className="inline-flex text-base text-gray-600">React</span>
+            </div>
+          </a>
+          <a href="https://github.com/coderdiaz/vue-datasource" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
+            <div className="lg:col-span-3 font-semibold inline-block">
+              <span className="inline-flex mr-2">🧺</span> Datasource
+            </div>
+            <p className="lg:col-span-7 text-gray-600">
+              A component to create dynamic tables with Vue 2.x
+            </p>
+            <div className="lg:col-span-2 flex items-center justify-start">
+              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
+              <span className="inline-flex text-base text-gray-600">Vue</span>
+            </div>
+          </a>
+          <a href="https://github.com/coderdiaz/scoreboard" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
+            <div className="lg:col-span-3 font-semibold inline-block">
+              <span className="inline-flex mr-2">🧮</span> Scoreboard
+            </div>
+            <p className="lg:col-span-7 text-gray-600">
+              A board for display a gamescore
+            </p>
+            <div className="lg:col-span-2 flex items-center justify-start">
+              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
+              <span className="inline-flex text-base text-gray-600">Vue</span>
+            </div>
+          </a>
+          <a href="https://github.com/coderdiaz/yell-vscode-theme" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
+            <div className="lg:col-span-3 font-semibold inline-block">
+              <span className="inline-flex mr-2">💖</span> Yell Theme
+            </div>
+            <p className="lg:col-span-7 text-gray-600">
+              VS Code theme for dark lovers with accessible colors
+            </p>
+            <div className="lg:col-span-2 flex items-center justify-start">
+              <div className="w-3 h-3 rounded-full bg-gray-600 mr-2" />
+              <span className="inline-flex text-base text-gray-600">VS Code</span>
+            </div>
+          </a>
+          <a href="https://github.com/coderdiaz/vue-status-indicator" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
+            <div className="lg:col-span-3 font-semibold inline-block">
+              <span className="inline-flex mr-2">🧷</span> Status Indicator
+            </div>
+            <p className="lg:col-span-7 text-gray-600">
+              A component to show an indicator as colored dots
+            </p>
+            <div className="lg:col-span-2 flex items-center justify-start">
+              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
+              <span className="inline-flex text-base text-gray-600">Vue</span>
+            </div>
+          </a>
+        </div>
+      </Container>
+    </section>
   </Layout>;
 };
 
