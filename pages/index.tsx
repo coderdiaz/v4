@@ -31,7 +31,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout>
     <section className="py-5 md:py-10 lg:py-20">
       <Container>
-        <h1 className="text-2.5xl sm:text-3.5xl md:text-7.5xl lg:text-10xl font-extrabold text-dark-600 leading-tight mb-6">
+        <h1 className="text-2.5xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
         <p className="text-gray-900 md:text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm based on Mexico City, Mexico, Ajuaaa!! Currently, I'm creating platforms and websites using the Jamstack approach; and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-600 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> but I also do <span className="font-medium text-alternative-600">back-end</span> development.</p>

@@ -5,7 +5,7 @@ interface IContainerProps {
 }
 
 const Container = ({ children }: IContainerProps) => {
-  return <div className="container mx-auto max-w-5xl px-6 md:px-8 lg:px-6">
+  return <div className="container mx-auto max-w-4xl px-6 md:px-8 lg:px-6">
     {children}
   </div>
 }
