@@ -1,4 +1,6 @@
 import React from 'react';
+import Head from './Head';
+import SiteData from '../site.json';
 import Header from '../components/Header';
 
 interface ILayoutProps {
@@ -7,7 +9,7 @@ interface ILayoutProps {
 
 const Layout = ({ children }: ILayoutProps) => (
   <>
-    <div className="h-1 bg-gradient-to-r from-primary-300 to-primary-800" />
+    <Head title={SiteData.site.title} />
     <Header/>
     {children}
   </>

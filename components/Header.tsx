@@ -3,7 +3,7 @@ import Avatar from '../assets/images/avatar.png';
 import Container from '../components/Container';
 
 const Header = () => {
-  return <header className="py-6 md:py-8 lg:py-10">
+  return <header className="py-6 md:py-8 lg:py-10 border-t-4 border-primary-400">
     <Container>
       <div className="flex justify-between items-center">
         <Link href="/">
