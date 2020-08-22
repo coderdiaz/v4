@@ -36,9 +36,9 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         <p className="text-gray-900 md:text-lg lg:text-xl leading-loose mb-2">Now, I'm learning Flutter to create an application to manage my personal finances and web subscriptions. Too, I also share what I learn at meetups and conferences and sometimes I teach about web development.</p>
       </Container>
     </section>
-    <section className="py-10">
+    <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 text-2.5xl mb-6">Latests Posts</h2>
+        <h2 className="inline-block font-extrabold text-dark-900 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
         <div className="">
           <article className="pb-8 text-gray-700">
             <dl>
@@ -47,42 +47,24 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
                 <time dateTime="2020-08-10T13:30:00.000Z">August 21, 2020</time>
               </dd>
             </dl>
-            <h3 className="mb-1">
+            <h3 className="mb-1 text-lg md:text-xl font-semibold text-dark-900 hover:text-primary-800 transition duration-300 ease-in-out">
               <Link href="/">
-                <a className="text-xl font-semibold text-dark-900 hover:text-primary-800 transition duration-300 ease-in-out">
-                  Loremp Ipsum
-                </a>
+                <a>Loremp Ipsum</a>
               </Link>
             </h3>
-            <p className="text-lg leading-relaxed">Alias culpa quae pariatur veniam explicabo vero quas optio. Nihil et error vel ut exercitationem fuga. Magni perspiciatis nulla corrupti fugiat.</p>
-          </article>
-          <article className="pb-8 text-gray-700">
-            <dl>
-              <dt className="sr-only">Published on</dt>
-              <dd className="text-base leading-6 font-medium text-gray-500">
-                <time dateTime="2020-08-10T13:30:00.000Z">August 21, 2020</time>
-              </dd>
-            </dl>
-            <h3 className="mb-1">
-              <Link href="/">
-                <a className="text-xl font-semibold text-dark-900 hover:text-primary-800 transition duration-300 ease-in-out">
-                  Loremp Ipsum
-                </a>
-              </Link>
-            </h3>
-            <p className="text-lg leading-relaxed">Alias culpa quae pariatur veniam explicabo vero quas optio. Nihil et error vel ut exercitationem fuga. Magni perspiciatis nulla corrupti fugiat.</p>
+            <p className="md:text-lg leading-relaxed">Alias culpa quae pariatur veniam explicabo vero quas optio. Nihil et error vel ut exercitationem fuga. Magni perspiciatis nulla corrupti fugiat.</p>
           </article>
         </div>
       </Container>
     </section>
-    <section className="py-10">
+    <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 text-2.5xl mb-6">My Recent Shots</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <h2 className="inline-block font-extrabold text-dark-900 text-xl md:text-2.5xl mb-6">My Recent Shots</h2>
+        <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
         </div>
         <div className="py-10 text-center">
-          <a className="inline-flex items-center py-4 px-6 rounded-lg text-primary-400 font-medium hover:bg-gray-50 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
+          <a className="inline-flex items-center py-4 px-6 rounded-lg text-primary-400 font-medium bg-gray-50 lg:bg-transparent lg:hover:bg-gray-50 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
             <span className="inline-flex items-center py-1 px-2 bg-primary-400 text-white text-sm rounded uppercase mr-3">New</span>
             Discover all shots on Dribbble
           </a>
