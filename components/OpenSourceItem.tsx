@@ -7,7 +7,7 @@ interface IOpenSourceItemProps {
 
 const OpenSourceItem = ({ item }: IOpenSourceItemProps) => {
   const badgeClasses = classNames(
-    'w-3 h-3 rounded-full bg-green-400 mr-2',
+    'w-3 h-3 rounded-full mr-2',
     item.tech.color,
   );
 
