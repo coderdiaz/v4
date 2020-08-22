@@ -17,6 +17,7 @@
     "@types/classnames": "^2.2.10",
     "classnames": "^2.2.6",
     "next": "^9.5.2",
+    "next-google-fonts": "^1.2.1",
     "next-images": "^1.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
