@@ -1,6 +1,9 @@
 {
   "site": {
-    "title": "Javier Diaz — Software Engineer and UI Designer based on Mexico City"
+    "title": "Javier Diaz — Software Engineer and UI Designer based on Mexico City",
+    "description": "Software Engineer and UI Designer based on Mexico City creating awesome experiences with Jamstack and Microservices",
+    "keywords": ["technology", "software", "web", "development", "fullstack", "software engineer", "developer"],
+    "image": "/og.png"
   },
   "social": {
     "dribbble": "https://dribbble.com/coderdiaz",
