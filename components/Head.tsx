@@ -17,9 +17,7 @@ const Head = ({ children, title }: IHeadProps) => (
         content="width=device-width, initial-scale=1.0"
       />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-
       <title>{title}</title>
-
       {children}
     </NextHead>
   </>
