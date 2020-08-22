@@ -34,8 +34,28 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         <h1 className="text-2.5xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm based on Mexico City, Mexico, Ajuaaa!! Currently, I'm creating platforms and websites using the Jamstack approach; and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-600 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> but I also do <span className="font-medium text-alternative-600">back-end</span> development.</p>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-2">Now, I'm learning Flutter to create an application to manage my personal finances and web subscriptions. Too, I also share what I learn at meetups and conferences and sometimes I teach about web development.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-500 hover:text-primary-600 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
+      </Container>
+    </section>
+    <section className="pt-5 pb-10 md:py-10 lg:py-20">
+      <Container>
+        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+          What I can help you with
+        </h2>
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <div className="p-8 bg-gradient-to-t from-dark-500 to-dark-400 text-white rounded-lg">
+            <h4 className="font-bold text-xl mb-2">Software Development</h4>
+            <p className="text-lg text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
+          </div>
+          <div className="p-8 bg-gradient-to-t from-yellow-600 to-yellow-400 text-dark rounded-lg">
+            <h4 className="font-bold text-xl mb-2">UI Design</h4>
+            <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
+          </div>
+        </div>
+        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 font-bold">
+          Are you ready to get started? Let's work together! <a href="mailto:hello@coderdiaz.me" className="mx-4 px-4 py-2 mt-4 md:mt-0 md:px-2 md:py-1 rounded-md bg-primary-300 bg-opacity-25 hover:bg-opacity-50 text-primary-500 transition duration-300 ease-in-out">Get in touch</a>
+        </p>
       </Container>
     </section>
     <section className="hidden py-5 md:py-10">

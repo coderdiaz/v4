@@ -37,7 +37,7 @@ const Head = ({ children, meta = {} }: IHeadProps) => {
       <meta name="twitter:site" content="@coderdiaz" />
       <meta name="twitter:title" content={meta.title || SiteData.site.title} />
       <meta name="twitter:description" content={meta.description || SiteData.site.description} />
-      <meta name="twitter:image" content={meta.image || SiteData.site.image} />
+      <meta name="twitter:image" content={`https://coderdiaz.me${meta.image || SiteData.site.image}`} />
       {children}
     </NextHead>
   </>
