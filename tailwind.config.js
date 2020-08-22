@@ -1,10 +1,15 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  purge: [
-    './components/**/*.{ts,tsx}',
-    './pages/**/*.{ts,tsx}'
-  ],
+  purge: {
+    content: [
+      './components/**/*.{ts,tsx}',
+      './pages/**/*.{ts,tsx}'
+    ],
+    options: {
+      whitelist: ['bg-green-400', 'bg-alternative-400', 'bg-gray-400'],
+    },
+  },
   theme: {
     colors: {
       transparent: 'transparent',
