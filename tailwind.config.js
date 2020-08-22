@@ -178,9 +178,9 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'hover'],
-    borderColor: ['dark', 'dark-focus', 'dark-focus-within', 'hover'],
-    textColor: ['dark', 'dark-hover', 'dark-active', 'hover']
+    backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'hover', 'responsive', 'focus'],
+    borderColor: ['dark', 'dark-focus', 'dark-focus-within', 'hover', 'responsive', 'focus'],
+    textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus']
   },
   plugins: [
     plugin(function ({ addUtilities }) {
@@ -195,7 +195,7 @@ module.exports = {
 
       addUtilities(filterUtilities, ['responsive', 'hover']);
     }),
-    require('tailwindcss-dark-mode'),
+    require('tailwindcss-dark-mode')(),
   ],
   future: {
     removeDeprecatedGapUtilities: true,

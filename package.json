@@ -20,7 +20,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "tailwindcss": "^1.7.3",
-    "tailwindcss-dark-mode": "^1.1.6"
+    "tailwindcss-dark-mode": "^1.1.6",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "@types/node": "^14.6.0",
