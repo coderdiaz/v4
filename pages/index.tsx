@@ -1,10 +1,13 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import classNames from "classnames";
 import SiteData from '../site.json';
+import OssProjects from '../data/oss-projects.json';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import Shots from '../components/Shots';
 import IShot from '../interfaces/IShot';
+import OpenSourceItem from '../components/OpenSourceItem';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
@@ -64,91 +67,24 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
           <Shots shots={shots} />
         </div>
         <div className="py-10 text-center">
-          <a className="inline-flex items-center py-4 px-6 rounded-lg text-primary-400 font-medium bg-gray-50 lg:bg-transparent lg:hover:bg-gray-50 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
-            <span className="inline-flex items-center py-1 px-2 bg-primary-400 text-white text-sm rounded uppercase mr-3">New</span>
-            Discover all shots on Dribbble
+          <a className="inline-flex items-center p-4 md:py-4 md:px-6 rounded-lg text-primary-400 font-semibold bg-gray-50 lg:bg-transparent lg:hover:bg-gray-50 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
+            <span className="hidden md:inline-flex items-center py-1 px-2 bg-primary-400 text-white text-sm rounded uppercase mr-3 leading-none">New</span>
+            <span className="hidden md:inline-flex mr-2 md:mr-4">Discover all shots on Dribbble</span>
+            <span className="inline-flex md:hidden mr-2 md:mr-4">Discover more on Dribbble</span>
+            <svg width="20" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
           </a>
         </div>
       </Container>
     </section>
-    <section className="py-10">
+    <section className="py-5 md:py-10">
       <Container>
         <h2 className="inline-block font-extrabold text-dark-900 text-xl md:text-2.5xl mb-6">
           OSS Projects
         </h2>
         <div className="-mx-4">
-          <a href="https://github.com/coderdiaz/vue-datasource" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
-            <div className="lg:col-span-3 font-semibold inline-block">
-              <span className="inline-flex mr-2">⏭️</span> Tiny Pagination
-            </div>
-            <p className="lg:col-span-7 text-gray-600">
-              A component to create a tiny pagination using Flexbox
-            </p>
-            <div className="lg:col-span-2 flex items-center justify-start">
-              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
-              <span className="inline-flex text-base text-gray-600">Vue</span>
-            </div>
-          </a>
-          <a href="https://github.com/coderdiaz/react-card-brand" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
-            <div className="lg:col-span-3 font-semibold inline-block">
-              <span className="inline-flex mr-2">💳️</span> Card Brand
-            </div>
-            <p className="lg:col-span-7 text-gray-600">
-              A zero-dependency Hook to show a brand based on card type
-            </p>
-            <div className="lg:col-span-2 flex items-center justify-start">
-              <div className="w-3 h-3 rounded-full bg-alternative-400 mr-2" />
-              <span className="inline-flex text-base text-gray-600">React</span>
-            </div>
-          </a>
-          <a href="https://github.com/coderdiaz/vue-datasource" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
-            <div className="lg:col-span-3 font-semibold inline-block">
-              <span className="inline-flex mr-2">🧺</span> Datasource
-            </div>
-            <p className="lg:col-span-7 text-gray-600">
-              A component to create dynamic tables with Vue 2.x
-            </p>
-            <div className="lg:col-span-2 flex items-center justify-start">
-              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
-              <span className="inline-flex text-base text-gray-600">Vue</span>
-            </div>
-          </a>
-          <a href="https://github.com/coderdiaz/scoreboard" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
-            <div className="lg:col-span-3 font-semibold inline-block">
-              <span className="inline-flex mr-2">🧮</span> Scoreboard
-            </div>
-            <p className="lg:col-span-7 text-gray-600">
-              A board for display a gamescore
-            </p>
-            <div className="lg:col-span-2 flex items-center justify-start">
-              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
-              <span className="inline-flex text-base text-gray-600">Vue</span>
-            </div>
-          </a>
-          <a href="https://github.com/coderdiaz/yell-vscode-theme" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
-            <div className="lg:col-span-3 font-semibold inline-block">
-              <span className="inline-flex mr-2">💖</span> Yell Theme
-            </div>
-            <p className="lg:col-span-7 text-gray-600">
-              VS Code theme for dark lovers with accessible colors
-            </p>
-            <div className="lg:col-span-2 flex items-center justify-start">
-              <div className="w-3 h-3 rounded-full bg-gray-600 mr-2" />
-              <span className="inline-flex text-base text-gray-600">VS Code</span>
-            </div>
-          </a>
-          <a href="https://github.com/coderdiaz/vue-status-indicator" className="px-4 py-2 grid lg:grid-cols-12 items-center cursor-pointer hover:bg-gray-50 rounded mb-2 transition duration-300 ease-in-out">
-            <div className="lg:col-span-3 font-semibold inline-block">
-              <span className="inline-flex mr-2">🧷</span> Status Indicator
-            </div>
-            <p className="lg:col-span-7 text-gray-600">
-              A component to show an indicator as colored dots
-            </p>
-            <div className="lg:col-span-2 flex items-center justify-start">
-              <div className="w-3 h-3 rounded-full bg-green-400 mr-2" />
-              <span className="inline-flex text-base text-gray-600">Vue</span>
-            </div>
-          </a>
+          {OssProjects.projects.map((project, index) => <OpenSourceItem key={index} item={project} />)}
         </div>
       </Container>
     </section>

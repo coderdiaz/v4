@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "icon": "⏭️",
+      "name": "Tiny Pagination",
+      "description": "A component to create a tiny pagination using Flexbox",
+      "tech": {
+        "color": "bg-green-400",
+        "name": "Vue"
+      },
+      "uri": "https://github.com/coderdiaz/vue-tiny-pagination"
+    },
+    {
+      "icon": "💳️",
+      "name": "Card Brand",
+      "description": "A zero-dependency Hook to show a brand based on card type",
+      "tech": {
+        "color": "bg-alternative-400",
+        "name": "React"
+      },
+      "uri": "https://github.com/coderdiaz/react-card-brand"
+    },
+    {
+      "icon": "🧺",
+      "name": "Datasource",
+      "description": "A component to create dynamic tables with Vue 2.x",
+      "tech": {
+        "color": "bg-green-400",
+        "name": "Vue"
+      },
+      "uri": "https://github.com/coderdiaz/vue-datasource"
+    },
+    {
+      "icon": "🧮",
+      "name": "Scoreboard",
+      "description": "A board for display a gamescore",
+      "tech": {
+        "color": "bg-green-400",
+        "name": "Vue"
+      },
+      "uri": "https://github.com/coderdiaz/scoreboard"
+    },
+    {
+      "icon": "💖",
+      "name": "Yell Theme",
+      "description": "VS Code theme for dark lovers with accessible colors",
+      "tech": {
+        "color": "bg-gray-400",
+        "name": "VS Code"
+      },
+      "uri": "https://github.com/coderdiaz/yell-vscode-theme"
+    },
+    {
+      "icon": "🧷",
+      "name": "Status Indicator",
+      "description": "A component to show an indicator as colored dots",
+      "tech": {
+        "color": "bg-green-400",
+        "name": "Vue"
+      },
+      "uri": "https://github.com/coderdiaz/vue-status-indicator"
+    }
+  ]
+}
