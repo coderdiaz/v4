@@ -34,7 +34,7 @@ const Header = () => {
           <li className="mr-3 md:-mr-4 items-center">
             <ColorSwitch />
           </li>
-          <li className="block md:hidden">
+          <li className="hidden">
             <button className="inline-flex items-center text-dark-500 md:bg-gray-50 md:hover:bg-gray-100 p-2" aria-label="Menu">
               <svg viewBox="0 0 20 20" className="w-6 h-6 inline-block align-middle flex-shrink-0">
                 <path fill="currentColor" fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
