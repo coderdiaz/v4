@@ -1,26 +1,45 @@
 import React from 'react';
 import NextHead from 'next/head';
+import SiteData from '../site.json';
 import GoogleFonts from 'next-google-fonts';
+import { useRouter } from 'next/dist/client/router';
 
 interface IHeadProps {
   children?: React.ReactNode;
-  title: string;
+  meta?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
+  };
 }
 
-const Head = ({ children, title }: IHeadProps) => (
-  <>
+const Head = ({ children, meta = {} }: IHeadProps) => {
+  const router = useRouter();
+  return <>
     <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
     <NextHead>
+      <title>{meta.title || SiteData.site.title}</title>
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <meta charSet="UTF-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <title>{title}</title>
+      <meta content={meta.description || SiteData.site.description} name="description" />
+      <meta content={meta.keywords ? meta.keywords.join(',') : SiteData.site.keywords.join(',')} name="keywords" />
+      <meta property="og:url" content={`https://coderdiaz.me${router.asPath}`} />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={meta.title || SiteData.site.title } />
+      <meta property="og:image" content={meta.image || SiteData.site.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@coderdiaz" />
+      <meta name="twitter:title" content={meta.title || SiteData.site.title} />
+      <meta name="twitter:description" content={meta.description || SiteData.site.description} />
+      <meta name="twitter:image" content={meta.image || SiteData.site.image} />
       {children}
     </NextHead>
   </>
-);
+};
 
 export default Head;

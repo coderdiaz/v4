@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from './Head';
-import SiteData from '../site.json';
 import Header from './Header';
 import Footer from './Footer';
 import importScript from './import-script';
@@ -14,7 +13,7 @@ const Layout = ({ children }: ILayoutProps) => {
 
   return (
     <>
-      <Head title={SiteData.site.title} />
+      <Head />
       <Header/>
       {children}
       <Footer />
