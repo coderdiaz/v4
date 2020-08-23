@@ -44,17 +44,17 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
           What I can help you with
         </h2>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <div className="p-8 bg-gradient-to-t from-dark-500 to-dark-400 text-white rounded-lg">
+          <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
             <h4 className="font-bold text-xl mb-2">Software Development</h4>
             <p className="text-lg text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
           </div>
-          <div className="p-8 bg-gradient-to-t from-yellow-600 to-yellow-400 text-dark rounded-lg">
+          <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
             <h4 className="font-bold text-xl mb-2">UI Design</h4>
             <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
           </div>
         </div>
-        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-300 font-bold">
-          Are you ready to get started? Let's work together! <a href="mailto:hello@coderdiaz.me" className="mx-4 px-4 py-2 mt-4 md:mt-0 md:px-2 md:py-1 rounded-md bg-primary-300 bg-opacity-25 hover:bg-opacity-50 dark:bg-primary-100 dark-hover:bg-primary-200 dark:bg-opacity-25 dark-hover:bg-opacity-25 text-primary-500 dark:text-darken transition duration-300 ease-in-out">Get in touch</a>
+        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-200 font-bold">
+          Are you ready to get started? Let's work together!
         </p>
       </Container>
     </section>

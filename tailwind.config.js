@@ -174,13 +174,18 @@ module.exports = {
         112: '29.25rem',
         125: '31.25rem',
         150: '37.5rem',
+      },
+      textOpacity: {
+        80: '.8',
+        90: '.9',
       }
     },
   },
   variants: {
     backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'hover', 'responsive', 'focus'],
     borderColor: ['dark', 'dark-focus', 'dark-focus-within', 'hover', 'responsive', 'focus'],
-    textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus']
+    textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
+    textOpacity: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
   },
   plugins: [
     plugin(function ({ addUtilities }) {
