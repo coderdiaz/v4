@@ -7,6 +7,8 @@ import Container from '../components/Container';
 import Shots from '../components/Shots';
 import IShot from '../interfaces/IShot';
 import OpenSourceItem from '../components/OpenSourceItem';
+import { url } from 'inspector';
+import { repeat } from '*.jpg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
@@ -29,7 +31,9 @@ interface IIndexPageProps {
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout>
-    <section className="py-5 md:py-10 lg:py-20">
+    <section className="py-5 md:py-10 lg:py-20 bg-repeat-x" style={{
+      backgroundImage: "url('/images/hero-cover.svg')"
+    }}>
       <Container>
         <h1 className="text-2.5xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
