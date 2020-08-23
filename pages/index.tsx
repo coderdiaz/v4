@@ -55,7 +55,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
           </div>
         </div>
-        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-200 font-bold">
+        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-300 font-bold">
           Are you ready to get started? Let's work together!
         </p>
       </Container>
