@@ -7,8 +7,6 @@ import Container from '../components/Container';
 import Shots from '../components/Shots';
 import IShot from '../interfaces/IShot';
 import OpenSourceItem from '../components/OpenSourceItem';
-import { url } from 'inspector';
-import { repeat } from '*.jpg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
