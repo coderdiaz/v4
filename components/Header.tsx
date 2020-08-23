@@ -1,7 +1,8 @@
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Avatar from '../assets/images/avatar.png';
 import Container from '../components/Container';
-import ColorSwitch from './ColorSwitch';
+const ColorSwitch = dynamic(() => import('./ColorSwitch'), { ssr: false });
 
 const Header = () => {
   return <header className="py-6 md:py-8 lg:py-10 border-t-4 border-primary-400">
