@@ -2,6 +2,7 @@
 /.next/
 /out/
 /build/
+/.mdx-data/
 
 .vercel
 .DS_Store
