@@ -1,0 +1,30 @@
+/** Temporal solution to support Dark Mode in @tailwindcss/typography */
+.dark-mode .prose {
+  font-family: theme('fontFamily.inter');
+  color: theme('colors.gray.500');
+}
+
+.dark-mode .prose h1 {
+  color: theme('colors.white') !important;
+}
+
+.dark-mode .prose h2 {
+  color: theme('colors.white') !important;
+}
+
+.dark-mode .prose p {
+  line-height: theme('lineHeight.loose');
+}
+
+.dark-mode .prose a {
+  font-weight: theme('fontWeight.bold');
+  color: theme('colors.primary.300');
+}
+
+.dark-mode .prose a:hover {
+  color: theme('colors.primary.500');
+}
+
+.prose {
+  font-size: theme('fontSize.normal');
+}
