@@ -7,6 +7,8 @@ import Container from '../components/Container';
 import Shots from '../components/Shots';
 import IShot from '../interfaces/IShot';
 import OpenSourceItem from '../components/OpenSourceItem';
+import SoftwareEngineering from '../assets/images/software-engineering.svg';
+import UIImage from '../assets/images/ui-design.svg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
@@ -47,10 +49,12 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         </h2>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
+            <img src={SoftwareEngineering} />
             <h4 className="font-bold text-xl mb-2">Software Development</h4>
             <p className="text-lg text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
           </div>
           <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
+          <img src={UIImage} />
             <h4 className="font-bold text-xl mb-2">UI Design</h4>
             <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
           </div>
