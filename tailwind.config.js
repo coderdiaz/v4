@@ -1,13 +1,34 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
+const mdx = require('@mdx-js/mdx');
 
 module.exports = {
   purge: {
+    mode: 'all',
     content: [
       './components/**/*.{ts,tsx}',
-      './pages/**/*.{ts,tsx}'
+      './pages/**/*.{ts,tsx,mdx}',
+      'next.config.js',
     ],
     options: {
-      whitelist: ['dark-mode', 'bg-green-400', 'bg-alternative-400', 'bg-gray-400'],
+      extractors: [
+        {
+          extensions: ['mdx'],
+          extractor: (content) => {
+            content = mdx.sync(content)
+
+            // Capture as liberally as possible, including things like `h-(screen-1.5)`
+            const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+
+            // Capture classes within other delimiters like .block(class="w-1/2") in Pug
+            const innerMatches =
+              content.match(/[^<>"'`\s.(){}[\]#=%]*[^<>"'`\s.(){}[\]#=%:]/g) || []
+
+            return broadMatches.concat(innerMatches)
+          },
+        },
+      ],
+      whitelist: ['dark-mode', 'bg-green-400', 'bg-alternative-400', 'bg-gray-400', 'h1', 'h2', 'h3', 'p', 'blockquote', 'strong'],
     },
   },
   theme: {
@@ -102,7 +123,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      'inter': ['Inter', 'sans-serif'],
+      'inter': ['Inter var', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: '0.5rem',
@@ -180,12 +201,58 @@ module.exports = {
         90: '.9',
       }
     },
+    typography: (theme) => ({
+      default: {
+        css: {
+          fontSize: theme('fontSize.lg'),
+          color: theme('colors.gray.700'),
+          p: {
+            lineHeight: theme('lineHeight.loose'),
+          },
+          h2: {
+            fontWeight: '700',
+            letterSpacing: theme('letterSpacing.tight'),
+            color: theme('colors.gray.900'),
+          },
+          h3: {
+            fontWeight: '600',
+            color: theme('colors.gray.900'),
+          },
+          'ol li:before': {
+            fontWeight: '600',
+            color: theme('colors.gray.500'),
+          },
+          'ul li:before': {
+            backgroundColor: theme('colors.gray.400'),
+          },
+          code: {
+            color: theme('colors.gray.900'),
+          },
+          a: {
+            fontWeight: theme('fontWeight.bold'),
+            color: theme('colors.primary.300'),
+          },
+          'a:hover': {
+            color: theme('colors.primary.500'),
+          },
+          pre: {
+            color: theme('colors.gray.200'),
+            backgroundColor: theme('colors.gray.800'),
+          },
+          blockquote: {
+            color: theme('colors.gray.900'),
+            borderLeftColor: theme('colors.gray.200'),
+          },
+        },
+      },
+    }),
   },
   variants: {
     backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'hover', 'responsive', 'focus'],
     borderColor: ['dark', 'dark-focus', 'dark-focus-within', 'hover', 'responsive', 'focus'],
     textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
     textOpacity: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
+    typography: ['responsive'],
   },
   plugins: [
     plugin(function ({ addUtilities }) {
@@ -201,6 +268,31 @@ module.exports = {
       addUtilities(filterUtilities, ['responsive', 'hover']);
     }),
     require('tailwindcss-dark-mode')(),
+    require('@tailwindcss/typography'),
+    function ({ addBase }) {
+      addBase([
+        {
+          '@font-face': {
+            fontFamily: 'Inter var',
+            fontWeight: '100 900',
+            fontStyle: 'normal',
+            fontNamedInstance: 'Regular',
+            fontDisplay: 'swap',
+            src: 'url("/fonts/Inter-roman.var-latin.woff2?3.13") format("woff2")',
+          },
+        },
+        {
+          '@font-face': {
+            fontFamily: 'Inter var',
+            fontWeight: '100 900',
+            fontStyle: 'italic',
+            fontNamedInstance: 'Italic',
+            fontDisplay: 'swap',
+            src: 'url("/fonts/Inter-italic.var-latin.woff2?3.13") format("woff2")',
+          },
+        },
+      ])
+    },
   ],
   future: {
     removeDeprecatedGapUtilities: true,
