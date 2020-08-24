@@ -8,6 +8,7 @@ module.exports = {
     content: [
       './components/**/*.{ts,tsx}',
       './pages/**/*.{ts,tsx,mdx}',
+      './layouts/**/*.{ts,tsx}',
       'next.config.js',
     ],
     options: {
