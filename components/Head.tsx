@@ -1,7 +1,6 @@
 import React from 'react';
 import NextHead from 'next/head';
 import SiteData from '../site.json';
-import GoogleFonts from 'next-google-fonts';
 import { useRouter } from 'next/dist/client/router';
 
 interface IHeadProps {
@@ -17,7 +16,6 @@ interface IHeadProps {
 const Head = ({ children, meta = {} }: IHeadProps) => {
   const router = useRouter();
   return <>
-    <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
     <NextHead>
       <title>{meta.title || SiteData.site.title}</title>
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

@@ -33,11 +33,11 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
       <Container>
-        <h1 className="text-2.5xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
+        <h1 className="text-3xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-500 hover:text-primary-600 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg lg:text-xl leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
+        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
+        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
       </Container>
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">

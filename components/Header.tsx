@@ -17,7 +17,7 @@ const Header = () => {
           </a>
         </Link>
         <ul className="flex justify-end items-center">
-          <li className="hidden mr-2">
+          <li className="hidden md:block mr-2">
             <Link href="/about">
               <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">About</a>
             </Link>

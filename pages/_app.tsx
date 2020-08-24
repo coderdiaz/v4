@@ -1,4 +1,5 @@
 import 'tailwindcss/tailwind.css';
+import '../assets/css/prose.css';
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import * as galite from 'ga-lite';

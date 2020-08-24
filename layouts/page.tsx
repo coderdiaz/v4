@@ -1,8 +1,8 @@
 import Head from '../components/Head';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import importScript from '../components/import-script';
 import PageContainer from '../components/PageContainer';
+import importScript from '../components/import-script';
+import Footer from '../components/Footer';
 
 export default function Layout(frontMatter) {
   return ({ children: content }) => {
@@ -14,8 +14,8 @@ export default function Layout(frontMatter) {
           title: frontMatter.title
         }} />
         <Header/>
-        <main>
-          <PageContainer>
+        <main className="py-5 md:py-10">
+          <PageContainer className="prose md:prose-lg lg:prose-xl">
             {content}
           </PageContainer>
         </main>
