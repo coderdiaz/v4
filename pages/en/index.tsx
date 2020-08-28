@@ -1,15 +1,14 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import SiteData from '../site.json';
-import OssProjects from '../data/oss-projects.json';
-import Layout from '../components/Layout';
-import Container from '../components/Container';
-import Shots from '../components/Shots';
-import IShot from '../interfaces/IShot';
-import OpenSourceItem from '../components/OpenSourceItem';
-import Head from '../components/Head';
-import SoftwareEngineering from '../assets/images/software-engineering.svg';
-import UIImage from '../assets/images/ui-design.svg';
+import SiteData from '../../site.json';
+import OssProjects from '../../data/oss-projects.json';
+import Layout from '../../components/Layout';
+import Container from '../../components/Container';
+import Shots from '../../components/Shots';
+import IShot from '../../interfaces/IShot';
+import OpenSourceItem from '../../components/OpenSourceItem';
+import SoftwareEngineering from '../../assets/images/software-engineering.svg';
+import UIImage from '../../assets/images/ui-design.svg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
@@ -32,40 +31,36 @@ interface IIndexPageProps {
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout>
-    <Head meta={{
-      title: "Javier Diaz - Ingeniero de Software y Diseñador UI",
-      description: "Ingeniero de Software en Ciudad de México creando increíbles experiencías a través de Jamstack y Microservicios"
-    }} />
     <section className="py-5 md:py-10 lg:py-20 bg-repeat-x" style={{
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
       <Container>
         <h1 className="text-3xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
-          Ingeniero de Software <br /> y Diseñador UI
+          Software Engineer <br />and UI Designer
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y estoy viviendo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-2">He estado aprendiendo recientemente <span className="text-blue-600 dark:text-blue-200">Flutter</span> para crear una aplicación para administrar mis finanzas personales y suscripciones web. Además, me gusta compartir y enseñar lo que aprendí en reuniones y conferencias sobre desarrollo web..</p>
+        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
+        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
       </Container>
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">
       <Container>
         <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
-          En que puedo ayudarte
+          What I can help you with
         </h2>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
             <img src={SoftwareEngineering} />
-            <h4 className="font-bold text-xl mb-2">Desarrollo de Software</h4>
-            <p className="text-lg text-opacity-75">Construyo experiencias de software increíbles utilizando mis mejores habilidades y tecnologías acorde a tu producto.</p>
+            <h4 className="font-bold text-xl mb-2">Software Development</h4>
+            <p className="text-lg text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
           </div>
           <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
           <img src={UIImage} />
-            <h4 className="font-bold text-xl mb-2">Interfaces de Usuario</h4>
-            <p className="text-lg text-opacity-75">Diseño productos <span className="font-medium">amigables y elegantes</span> para el usuario. Construyo <span className="font-medium">experiencias placenteras</span> que permita a tus usuarios cumplir sus objetivos.</p>
+            <h4 className="font-bold text-xl mb-2">UI Design</h4>
+            <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
           </div>
         </div>
         <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-300 font-bold">
-          ¿Estás listo para iniciar? Trabajemos juntos
+          Are you ready to get started? Let's work together!
         </p>
       </Container>
     </section>
@@ -92,14 +87,15 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimos diseños</h2>
+        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">My Recent Shots</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
         </div>
         <div className="py-10 text-center">
           <a className="inline-flex items-center p-4 md:py-4 md:px-6 rounded-lg text-primary-400 dark:text-primary-300 font-semibold bg-gray-50 lg:bg-transparent lg:hover:bg-gray-50 dark:bg-dark-800 lg:dark:bg-transparent lg:dark-hover:bg-dark-800 transition duration-300 ease-in-out" href={SiteData.social.dribbble}>
-            <span className="hidden md:inline-flex items-center py-1 px-2 bg-primary-400 dark:bg-primary-300 text-white dark:text-darken text-sm rounded uppercase mr-3 leading-none">Nuevo</span>
-            <span className="inline-flex mr-2 md:mr-4">Descubre más en Dribbble</span>
+            <span className="hidden md:inline-flex items-center py-1 px-2 bg-primary-400 dark:bg-primary-300 text-white dark:text-darken text-sm rounded uppercase mr-3 leading-none">New</span>
+            <span className="hidden md:inline-flex mr-2 md:mr-4">Discover all shots on Dribbble</span>
+            <span className="inline-flex md:hidden mr-2 md:mr-4">Discover more on Dribbble</span>
             <svg width="20" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
             </svg>
@@ -110,7 +106,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     <section className="py-5 md:py-10">
       <Container>
         <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
-          Proyectos Open Source
+          OSS Projects
         </h2>
         <div className="-mx-4">
           {OssProjects.projects.map(
