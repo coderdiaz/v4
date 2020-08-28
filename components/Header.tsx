@@ -23,7 +23,7 @@ const Header = ({ language }: HeaderProps) => {
             <img className="w-10 rounded-full" src={Avatar} alt="Avatar of Javier Diaz Chamorro" />
           </a>
         </Link>
-        <ul className="flex justify-start items-center">
+        <ul className="hidden md:flex justify-start items-center">
           <li className="items-center">
             <Link href="/">
               <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold px-2 py-1 transition duration-300 ease-in-out">ES</a>
