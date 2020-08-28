@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import SiteData from '../../site.json';
-import OssProjects from '../../data/oss-projects.json';
+import OssProjects from '../../data/en/oss-projects.json';
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';
 import Shots from '../../components/Shots';
@@ -30,12 +30,12 @@ interface IIndexPageProps {
 }
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
-  return <Layout>
+  return <Layout language="en">
     <section className="py-5 md:py-10 lg:py-20 bg-repeat-x" style={{
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
       <Container>
-        <h1 className="text-3xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
+        <h1 className="text-3xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-display text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
         <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
@@ -44,18 +44,18 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           What I can help you with
         </h2>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
             <img src={SoftwareEngineering} />
-            <h4 className="font-bold text-xl mb-2">Software Development</h4>
+            <h4 className="font-display text-xl mb-2">Software Development</h4>
             <p className="text-lg text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
           </div>
           <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
           <img src={UIImage} />
-            <h4 className="font-bold text-xl mb-2">UI Design</h4>
+            <h4 className="font-display text-xl mb-2">UI Design</h4>
             <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
           </div>
         </div>
@@ -66,7 +66,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="hidden py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
         <div className="">
           <article className="pb-8 text-gray-700">
             <dl>
@@ -87,7 +87,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">My Recent Shots</h2>
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">My Recent Shots</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
         </div>
@@ -105,7 +105,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           OSS Projects
         </h2>
         <div className="-mx-4">

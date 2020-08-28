@@ -40,47 +40,25 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
       <Container>
-        <h1 className="text-3xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-extrabold text-dark-600 dark:text-gray-200 leading-tight mb-6">
-          Ingeniero de Software <br /> y Diseñador UI
+        <h1 className="text-3xl sm:text-3.5xl font-display md:text-7.5xl lg:text-9.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
+          Software Engineer <br /> y Diseñador UI
         </h1>
         <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y estoy viviendo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
         <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-2">He estado aprendiendo recientemente <span className="text-blue-600 dark:text-blue-200">Flutter</span> para crear una aplicación para administrar mis finanzas personales y suscripciones web. Además, me gusta compartir y enseñar lo que aprendí en reuniones y conferencias sobre desarrollo web..</p>
       </Container>
     </section>
-    <section className="pt-5 pb-10 md:py-10 lg:py-20">
-      <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
-          En que puedo ayudarte
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
-            <img src={SoftwareEngineering} />
-            <h4 className="font-bold text-xl mb-2">Desarrollo de Software</h4>
-            <p className="text-lg text-opacity-75">Construyo experiencias de software increíbles utilizando mis mejores habilidades y tecnologías acorde a tu producto.</p>
-          </div>
-          <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
-          <img src={UIImage} />
-            <h4 className="font-bold text-xl mb-2">Interfaces de Usuario</h4>
-            <p className="text-lg text-opacity-75">Diseño productos <span className="font-medium">amigables y elegantes</span> para el usuario. Construyo <span className="font-medium">experiencias placenteras</span> que permita a tus usuarios cumplir sus objetivos.</p>
-          </div>
-        </div>
-        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-300 font-bold">
-          ¿Estás listo para iniciar? Trabajemos juntos
-        </p>
-      </Container>
-    </section>
     <section className="hidden py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimas publicaciones</h2>
         <div className="">
           <article className="pb-8 text-gray-700">
             <dl>
-              <dt className="sr-only">Published on</dt>
+              <dt className="sr-only">Publicado el</dt>
               <dd className="text-base leading-6 font-medium text-gray-500">
-                <time dateTime="2020-08-10T13:30:00.000Z">August 21, 2020</time>
+                <time dateTime="2020-08-10T13:30:00.000Z">21 de Agosto, 2020</time>
               </dd>
             </dl>
-            <h3 className="mb-1 text-lg md:text-xl font-semibold text-dark-900 dark:text-gray-200 hover:text-primary-800 dark-hover:text-primary-500 transition duration-300 ease-in-out">
+            <h3 className="mb-1 text-lg md:text-xl font-display text-dark-900 dark:text-gray-200 hover:text-primary-800 dark-hover:text-primary-500 transition duration-300 ease-in-out">
               <Link href="/">
                 <a>Loremp Ipsum</a>
               </Link>
@@ -90,9 +68,31 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         </div>
       </Container>
     </section>
+    <section className="pt-5 pb-10 md:py-10 lg:py-20">
+      <Container>
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+          En que puedo ayudarte
+        </h2>
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
+            <img src={SoftwareEngineering} />
+            <h4 className="font-display text-xl mb-2">Desarrollo de Software</h4>
+            <p className="text-lg text-opacity-75">Construyo experiencias de software increíbles utilizando mis mejores habilidades y tecnologías acorde a tu producto.</p>
+          </div>
+          <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
+          <img src={UIImage} />
+            <h4 className="font-display text-xl mb-2">Interfaces de Usuario</h4>
+            <p className="text-lg text-opacity-75">Diseño productos <span className="font-medium">amigables y elegantes</span> para el usuario. Construyo <span className="font-medium">experiencias placenteras</span> que permita a tus usuarios cumplir sus objetivos.</p>
+          </div>
+        </div>
+        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-300 font-bold">
+          ¿Estás listo para iniciar? Trabajemos juntos
+        </p>
+      </Container>
+    </section>
     <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimos diseños</h2>
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimos diseños</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
         </div>
@@ -109,7 +109,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:py-10">
       <Container>
-        <h2 className="inline-block font-extrabold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           Proyectos Open Source
         </h2>
         <div className="-mx-4">

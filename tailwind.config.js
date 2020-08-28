@@ -124,7 +124,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      'inter': ['Inter var', ...defaultTheme.fontFamily.sans],
+      inter: ['Inter var', ...defaultTheme.fontFamily.sans],
+      display: ['Gilroy', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: '0.5rem',
@@ -254,6 +255,7 @@ module.exports = {
     textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
     textOpacity: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
     typography: ['responsive'],
+    spacing: ['responsive', 'hover', 'focus', 'last']
   },
   plugins: [
     plugin(function ({ addUtilities }) {
@@ -292,6 +294,15 @@ module.exports = {
             src: 'url("/fonts/Inter-italic.var-latin.woff2?3.13") format("woff2")',
           },
         },
+        {
+          '@font-face': {
+            fontFamily: 'Gilroy',
+            fontWeight: '600',
+            fontStyle: 'normal',
+            fontDisplay: 'swap',
+            src: 'url("/fonts/Gilroy-semibold.woff2") format("woff2")',
+          },
+        }
       ])
     },
   ],

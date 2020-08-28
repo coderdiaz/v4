@@ -5,16 +5,17 @@ import Footer from './Footer';
 import importScript from './import-script';
 
 interface ILayoutProps {
+  language?: string;
   children?: React.ReactNode;
 }
 
-const Layout = ({ children }: ILayoutProps) => {
+const Layout = ({ children, language = 'es' }: ILayoutProps) => {
   importScript('/js/prevent.flash.js');
 
   return (
     <>
       <Head />
-      <Header/>
+      <Header language={language} />
       <main>
         {children}
       </main>

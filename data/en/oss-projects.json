@@ -3,7 +3,7 @@
     {
       "icon": "⏭️",
       "name": "Tiny Pagination",
-      "description": "Crea una simple páginación utilizando Flexbox",
+      "description": "A component to create a tiny pagination using Flexbox",
       "tech": {
         "color": "bg-green-400",
         "name": "Vue"
@@ -13,7 +13,7 @@
     {
       "icon": "💳️",
       "name": "Card Brand",
-      "description": "Un hook para mostrar el provedor de tarjeta sin dependencia",
+      "description": "A zero-dependency Hook to show a brand based on card type",
       "tech": {
         "color": "bg-alternative-400",
         "name": "React"
@@ -23,7 +23,7 @@
     {
       "icon": "🧺",
       "name": "Datasource",
-      "description": "Crea tablas dinámicas con Vue 2",
+      "description": "A component to create dynamic tables with Vue 2.x",
       "tech": {
         "color": "bg-green-400",
         "name": "Vue"
@@ -33,7 +33,7 @@
     {
       "icon": "🧮",
       "name": "Scoreboard",
-      "description": "Un tablero para mostrar el puntuaje de un juego",
+      "description": "A board for display a gamescore",
       "tech": {
         "color": "bg-green-400",
         "name": "Vue"
@@ -43,7 +43,7 @@
     {
       "icon": "💖",
       "name": "Yell Theme",
-      "description": "Tema oscuro para VS Code con colores accesibles",
+      "description": "VS Code theme for dark lovers with accessible colors",
       "tech": {
         "color": "bg-gray-400",
         "name": "VS Code"
@@ -53,7 +53,7 @@
     {
       "icon": "🧷",
       "name": "Status Indicator",
-      "description": "Muestra el estado en tu panel a través de puntos coloreados",
+      "description": "A component to show an indicator as colored dots",
       "tech": {
         "color": "bg-green-400",
         "name": "Vue"
