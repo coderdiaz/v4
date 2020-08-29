@@ -13,7 +13,7 @@ export default function Layout(frontMatter) {
         <Head meta={{
           title: frontMatter.title
         }} />
-        <Header/>
+        <Header language={frontMatter.language}/>
         <main>
           <PageContainer>
             {content}
