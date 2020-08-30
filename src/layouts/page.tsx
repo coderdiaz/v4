@@ -11,7 +11,8 @@ export default function Layout(frontMatter) {
     return (
       <>
         <Head meta={{
-          title: frontMatter.title
+          title: frontMatter.title,
+          description: frontMatter.description
         }} />
         <Header language={frontMatter.language}/>
         <main className="py-5 md:py-10">
