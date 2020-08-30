@@ -15,7 +15,7 @@ export default function Layout(frontMatter) {
         }} />
         <Header language={frontMatter.language}/>
         <main className="py-5 md:py-10">
-          <PageContainer className="prose md:prose-lg lg:prose-xl">
+          <PageContainer className="prose">
             {content}
           </PageContainer>
         </main>

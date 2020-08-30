@@ -3,12 +3,13 @@ import Link from 'next/link';
 import SiteData from '../../site.json';
 import OssProjects from '../../data/en/oss-projects.json';
 import Layout from '../../components/Layout';
-import Container from '../../components/Container';
+import PageContainer from '../../components/PageContainer';
 import Shots from '../../components/Shots';
 import IShot from '../../interfaces/IShot';
 import OpenSourceItem from '../../components/OpenSourceItem';
 import SoftwareEngineering from '../../assets/images/software-engineering.svg';
 import UIImage from '../../assets/images/ui-design.svg';
+import Mentoring from '../../assets/images/mentoring.svg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
@@ -31,41 +32,45 @@ interface IIndexPageProps {
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout language="en">
-    <section className="py-5 md:py-10 lg:py-20 bg-repeat-x" style={{
+    <section className="py-5 md:py-10 lg:pt-20 lg:pb-0 bg-repeat-x" style={{
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
-      <Container>
-        <h1 className="text-3xl sm:text-3.5xl md:text-7.5xl lg:text-9.5xl font-display text-dark-600 dark:text-gray-200 leading-tight mb-6">
+      <PageContainer>
+        <h1 className="text-3.5xl font-display md:text-7.5xl lg:text-8.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 text-lg lg:text-xl leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
-      </Container>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
+      </PageContainer>
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">
-      <Container>
+      <PageContainer>
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           What I can help you with
         </h2>
         <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <div className="p-8 bg-blue dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
-            <img src={SoftwareEngineering} />
-            <h4 className="font-display text-xl mb-2">Software Development</h4>
-            <p className="text-lg text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
+          <div className="col-span-2 md:col-span-1 p-8 bg-gray-50 dark:bg-gray-300 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
+            <img className="mb-4" src={SoftwareEngineering} />
+            <h4 className="font-display text-lg md:text-xl mb-2">Software Development</h4>
+            <p className="text-opacity-75">I build awesome software experiences using the best skills and technologies according to product.</p>
           </div>
-          <div className="p-8 bg-green-400 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
-          <img src={UIImage} />
-            <h4 className="font-display text-xl mb-2">UI Design</h4>
-            <p className="text-lg text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
+          <div className="col-span-2 md:col-span-1 p-8 bg-gray-50 dark:bg-gray-300 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
+            <img className="mb-4" src={UIImage} />
+            <h4 className="font-display text-lg md:text-xl mb-2">UI Design</h4>
+            <p className="text-opacity-75">I design <span className="font-medium">user friendly and visually</span> products. I craft <span className="font-medium">delightful experiences</span> that let users achieve their goals.</p>
+          </div>
+          <div className="col-span-2 p-8 bg-gray-50 dark:bg-gray-300 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg flex flex-col md:flex-row md:items-center">
+            <img width="370" className="mb-4" src={Mentoring} />
+            <div className="md:ml-4">
+              <h4 className="font-display text-lg md:text-xl mb-2">Mentoring</h4>
+              <p className="text-opacity-50">Do you have any ideas, questions or doubts about a specific topic, let's meet and I can help you find a solution.</p>
+            </div>
           </div>
         </div>
-        <p className="inline-flex flex-col md:flex-row items-center text-center md:text-left text-primary-400 dark:text-primary-300 font-bold">
-          Are you ready to get started? Let's work together!
-        </p>
-      </Container>
+      </PageContainer>
     </section>
     <section className="hidden py-5 md:py-10">
-      <Container>
+      <PageContainer>
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
         <div className="">
           <article className="pb-8 text-gray-700">
@@ -83,10 +88,10 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             <p className="md:text-lg leading-relaxed dark:text-gray-500">Alias culpa quae pariatur veniam explicabo vero quas optio. Nihil et error vel ut exercitationem fuga. Magni perspiciatis nulla corrupti fugiat.</p>
           </article>
         </div>
-      </Container>
+      </PageContainer>
     </section>
     <section className="py-5 md:py-10">
-      <Container>
+      <PageContainer>
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">My Recent Shots</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
@@ -101,10 +106,10 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             </svg>
           </a>
         </div>
-      </Container>
+      </PageContainer>
     </section>
     <section className="py-5 md:py-10">
-      <Container>
+      <PageContainer>
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           OSS Projects
         </h2>
@@ -113,7 +118,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             (project, index) => <OpenSourceItem key={index} item={project} />
           )}
         </div>
-      </Container>
+      </PageContainer>
     </section>
   </Layout>;
 };
