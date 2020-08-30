@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import SiteData from '../site.json';
+import SiteData from '../../site.json';
 import Avatar from '../assets/images/avatar.png';
 import Container from '../components/Container';
 const ColorSwitch = dynamic(() => import('./ColorSwitch'), { ssr: false });

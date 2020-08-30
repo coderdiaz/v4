@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import SiteData from '../../site.json';
+import SiteData from '../../../site.json';
 import OssProjects from '../../data/en/oss-projects.json';
 import Layout from '../../components/Layout';
 import Container from '../../components/Container';

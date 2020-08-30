@@ -3,7 +3,7 @@ const withMdxEnhanced = require('next-mdx-enhanced');
 const mdxPrism = require('mdx-prism');
 
 module.exports = withImages(withMdxEnhanced({
-  layoutPath: 'layouts',
+  layoutPath: 'src/layouts',
   defaultLayout: true,
   remarkPlugins: [
     require('remark-autolink-headings'),

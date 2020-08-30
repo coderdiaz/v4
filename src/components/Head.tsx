@@ -1,6 +1,6 @@
 import React from 'react';
 import NextHead from 'next/head';
-import SiteData from '../site.json';
+import SiteData from '../../site.json';
 import { useRouter } from 'next/dist/client/router';
 
 interface IHeadProps {

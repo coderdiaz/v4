@@ -1,0 +1,130 @@
+---
+layout: post
+title: Desplegando Hugo sobre múltiples entornos en Vercel
+description: Aprende a desplegar tus sitios web generados en Hugo sobre diferentes entornos de trabajo en Vercel
+keywords: ["deployment", "hugo"]
+date: 2020-07-05
+language: es
+---
+> En esta publicación, te enseñaré a desplegar tu aplicación en Hugo para múltiples ambientes, ya sea para un ambiente de _staging_ o _producción_.
+
+Actualmente donde me encuentro laborando, estamos trabajando en conjunto con el equipo de desarrollo en la migración de nuestro sitio web de Gatsby a Hugo, en otra publicación compartiré contigo sobre como hemos llegado a está decisión y sobre sus ventajas.
+
+Ya una vez que hemos concluido la construcción y el desarrollo de nuestro sitio, lo siguiente es el despliegue, por lo que me dí a la tarea de preparar nuestros entornos de trabajo en este caso, staging y producción. Entonces me encontré en un punto importante de esto, la configuración para los distintos ambientes.
+
+Anteriormente, nos encontrábamos trabajando en la plataforma Netlify, por lo que hacer está configuración era muy sencillo, algo como esto:
+
+```toml
+[build]
+publish = "public"
+command = "hugo --gc --minify"
+
+[context.production.environment]
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+```
+
+A través del **contexto** que nos proveé la plataforma, podemos definir el comportamiento de nuestra aplicación, desde el comando con el que se debe ejecutar de acuerdo al ambiente y sus variables de entorno.
+
+Dentro de Hugo, existen diferentes formas para la definición de estás variables de entorno, desde enviarlas directamente desde el comando de ejecución o utilizando el sistema de configuración de Hugo.
+
+### Enviando variables de entorno desde el comando
+
+```bash
+env HUGO_TITLE="Some Title" hugo
+```
+
+En la sentencia anterior, podemos observar que estamos enviando una variable de entorno `HUGO_TITLE` que será utilizando de forma interna Hugo en tiempo de ejecución.
+
+### Utilizando la configuración de Hugo
+
+Hugo nos provee una archivo donde nos permite definir nuestras variables para que pueden ser utilizadas dentro de nuestro proyecto o para configurar la herramienta, este archivo es `config.toml` y se ve de la siguiente manera:
+
+```toml
+baseURL = "https://coderdiaz.me"
+defaultContentLanguage = "es"
+
+[params]
+apiURL = "https://my-first-api.io/graphql"
+```
+
+Dentro de esta configuración, podemos colocar nuestras variables de entorno ya sea para que puedan utilizarse dentro de nuestros archivos de JavaScript para hacer peticiones o para alguna configuración de un servicio como Disqus o Google Analytics.
+
+La ventaja de usar la configuración de Hugo, es que nos provee `out the box` la opción para reescribir estas variables definidas dentro de nuestro `config.toml` basado en nuestro entorno de desarrollo y además de una mejor estructura.
+
+```
+├── config
+│   ├── _default
+│   │   ├── config.toml
+│   │   ├── languages.toml
+│   │   ├── menus.en.toml
+│   │   ├── menus.zh.toml
+│   │   └── params.toml
+│   ├── production
+│   │   ├── config.toml
+│   │   └── params.toml
+│   └── staging
+│       ├── config.toml
+│       └── params.toml
+```
+
+Con esta opción le podemos indicar a Hugo sobre que configuración utilizar en tiempo de ejecución, por ejemplo, si estamos en un ambiente de _Staging_, utilizar la configuración para staging.
+
+```js
+hugo --environment staging
+```
+
+Para este punto todo iba normal, teníamos todo preparado para lanzar a producción y para nuestro ambiente de staging. Pero vaya sorpresa, dentro de Vercel podemos definir variables de entorno de acuerdo a sus ambientes, en este caso:
+
+* **production**: Utilizado para desplegar a ambiente de producción.
+* **preview**: Utilizado para desplegar todas las ramas a excepción de la rama principal y para Pull Requests.
+
+Pero, no podemos definir un comando para cada uno de esos ambientes, simplemente el mismo comando que definimos dentro de nuestro panel del proyecto, es el que se ejecutará en todos nuestros ambientes. Por lo que si nosotros necesitamos indicarle que para el ambiente que no es producción, nos permita visualizar contenido en `Draft` o utilizar diferente configuración a la de producción, no es posible :confused:.
+
+![Sección para configurar el comando a ejecutar dentro de los ambientes](https://images.coderdiaz.me/uploads/vercel-dashboard-commands.png "Vercel: Configuración de comandos de construcción y desarrollo")
+
+Aquí fue donde empecé a investigar al respecto y encontré dentro de GitHub un issue que se encuentra activo desde el 2019, donde buscaban hacer algo como en Netlify para diferentes ambientes en Vercel.
+
+![Issue de Vercel en GitHub](https://images.coderdiaz.me/uploads/github-issue-vercel.png)
+
+Dentro de este mismo issue, hubo una propuesta de solución, ya que lo que estaba intentando hacer quien registro este issue, era el poder indicar la variable `baseUrl` de acuerdo al ambiente en el que se estaba construyendo su sitio.
+
+Esto para algunos sitios es bastante importante, ya que muchas veces cuando necesitamos registrar el meta de `canonical` dentro de nuestro sitio necesita tener la URL absoluta y no la relativa. Por lo que, si no configuramos bien esto, podría suceder que todas nuestras rutas absolutas generadas en Staging, utilicen la URL de producción, ya que esta la habremos definido dentro de nuestro `config.toml`.
+
+La solución propuesta, va de hacer un custom script en `bash`, para indicarle al contenedor de Vercel como debería ejecutarse y por supuesto que URL tomar para cada uno de estos.
+
+![Propuesta de solución](https://images.coderdiaz.me/uploads/github-issue-solution.png)
+
+En esta solución podemos observar que se esta analizando la variable de entorno `BASE_URL` para saber si no ha sido definida, en caso de no estar definida entonces le indicamos a Vercel, que deseamos ejecutar Hugo con la base URL, generada por Vercel.
+
+En caso contrario, donde `BASE_URL `si esta definida, entonces utilizamos la variable que hayamos definido.
+
+Esto obviamente no es lo que necesitamos resolver, pero nos da una idea de que podemos indicarle a Vercel a través de un custom script en `bash` como deberá ejecutar de acuerdo a ciertos casos. Entonces dicho esto, investigué cuales son las variables que tengo disponibles dentro de Vercel, en este caso, sus variables de sistema, las cuales podemos encontrar acá: [https://vercel.com/docs/v2/build-step#system-environment-variables](https://vercel.com/docs/v2/build-step#system-environment-variables "https://vercel.com/docs/v2/build-step#system-environment-variables").
+
+Si lo que nosotros necesitamos es que de acuerdo a donde estemos desplegando nuestra aplicación, ya sea la rama principal, alguna de desarrollo u otra rama hecha para algún feature o fix, entonces determine el ambiente con el que deberá ejecutarse.
+
+Para ello, hice una modificación utilizando la variable `VERCEL_GIT_COMMIT_REF` que me permitirá saber la rama desde la cuál esta siendo ejecutado el despliegue y así, indicarle que cuando sea la rama principal, se ejecute en modo de producción con ciertos parámetros ya definidos y cuando sea otra rama distinta a la principal, se ejecute en modo de Staging con los parámetros indicados para dicho ambiente.
+
+Entonces nuestro resultado final es un archivo `build.sh` para que sea ejecutable:
+
+```bash
+#!/usr/bin/env bash
+if [ ${VERCEL_GITHUB_COMMIT_REF} == 'master' ]
+then
+  echo "Runnning build using Production Environment";
+  hugo --gc --minify
+else
+  echo "Runnning build using Staging Environment";
+  hugo --gc --minify -D --environment staging
+fi
+```
+
+Una vez que preparamos nuestro script, solamente queda indicarle a Vercel como deberá ejecutar nuestro proyecto.
+
+![](https://images.coderdiaz.me/uploads/vercel-dashboard-commands-updated.png)
+
+De está manera, podremos solucionarlo en lo que esperamos a que Vercel en algún momento lance esta característica y no fallar en el intento para desplegar nuestro nuevo sitio.
+
+Espero que te haya servido y si tienes dudas, no dudes en dejar tu comentario o ponerte en contacto conmigo.
