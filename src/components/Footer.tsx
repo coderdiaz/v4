@@ -1,8 +1,8 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import SiteData from '../../site.json';
-import Avatar from '../assets/images/avatar.png';
-import Container from '../components/Container';
+import SiteData from '@/seo-next.config';
+import Avatar from '@/assets/images/avatar.png';
+import Container from '@/components/Container';
 const ColorSwitch = dynamic(() => import('./ColorSwitch'), { ssr: false });
 
 const Footer = () => {

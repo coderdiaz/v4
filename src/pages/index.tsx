@@ -1,16 +1,16 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import SiteData from '../../site.json';
-import OssProjects from '../data/oss-projects.json';
-import Layout from '../components/Layout';
-import Container from '../components/Container';
-import Shots from '../components/Shots';
-import IShot from '../interfaces/IShot';
-import OpenSourceItem from '../components/OpenSourceItem';
-import Head from '../components/Head';
-import SoftwareEngineering from '../assets/images/software-engineering.svg';
-import UIImage from '../assets/images/ui-design.svg';
-import Mentoring from '../assets/images/mentoring.svg';
+import SiteData from '@/seo-next.config';
+import OssProjects from '@/data/oss-projects.json';
+import Layout from '@/components/Layout';
+import Container from '@/components/Container';
+import Shots from '@/components/Shots';
+import IShot from '@/interfaces/IShot';
+import OpenSourceItem from '@/components/OpenSourceItem';
+import Head from '@/components/Head';
+import SoftwareEngineering from '@/assets/images/software-engineering.svg';
+import UIImage from '@/assets/images/ui-design.svg';
+import Mentoring from '@/assets/images/mentoring.svg';
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {

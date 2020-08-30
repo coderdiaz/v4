@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import Avatar from '../assets/images/avatar.png';
-import Container from '../components/Container';
+import Avatar from '@/assets/images/avatar.png';
+import Container from '@/components/Container';
 const ColorSwitch = dynamic(() => import('./ColorSwitch'), { ssr: false });
-import SiteData from '../../site.json';
+import SiteData from '@/seo-next.config';
 
 interface HeaderProps {
   language: string;
