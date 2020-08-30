@@ -206,19 +206,25 @@ module.exports = {
     typography: (theme) => ({
       default: {
         css: {
-          fontSize: theme('fontSize.lg'),
           color: theme('colors.gray.700'),
           p: {
             lineHeight: theme('lineHeight.loose'),
           },
-          h2: {
-            fontWeight: '700',
-            letterSpacing: theme('letterSpacing.tight'),
+          h1: {
             color: theme('colors.gray.900'),
+            fontFamily: `${theme('fontFamily.display')}`
+          },
+          h2: {
+            color: theme('colors.gray.900'),
+            fontFamily: `${theme('fontFamily.display')}`
           },
           h3: {
-            fontWeight: '600',
             color: theme('colors.gray.900'),
+            fontFamily: `${theme('fontFamily.display')}`
+          },
+          h4: {
+            color: theme('colors.gray.900'),
+            fontFamily: `${theme('fontFamily.display')}`
           },
           'ol li:before': {
             fontWeight: '600',

@@ -3,12 +3,7 @@
   font-family: theme('fontFamily.inter');
   color: theme('colors.gray.500');
 }
-
-.dark-mode .prose h1 {
-  color: theme('colors.white') !important;
-}
-
-.dark-mode .prose h2 {
+.dark-mode .prose > h1, h2, h3, h4, h5, h6 {
   color: theme('colors.white') !important;
 }
 
@@ -23,8 +18,4 @@
 
 .dark-mode .prose a:hover {
   color: theme('colors.primary.500');
-}
-
-.prose {
-  font-size: theme('fontSize.normal');
 }
