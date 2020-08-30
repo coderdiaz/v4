@@ -11,8 +11,4 @@ module.exports = withImages(withMdxEnhanced({
     require('remark-code-titles'),
   ],
   rehypePlugins: [mdxPrism],
-})({
-  experimental: {
-    jsconfigPaths: true,
-  },
-}));
+})());
