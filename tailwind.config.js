@@ -6,9 +6,9 @@ module.exports = {
   purge: {
     mode: 'all',
     content: [
-      './components/**/*.{ts,tsx}',
-      './pages/**/*.{ts,tsx,mdx}',
-      './layouts/**/*.{ts,tsx}',
+      './src/components/**/*.{ts,tsx}',
+      './src/pages/**/*.{ts,tsx,mdx}',
+      './src/layouts/**/*.{ts,tsx}',
       'next.config.js',
     ],
     options: {
