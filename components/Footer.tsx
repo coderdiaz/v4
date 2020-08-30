@@ -7,7 +7,7 @@ const ColorSwitch = dynamic(() => import('./ColorSwitch'), { ssr: false });
 
 const Footer = () => {
   return <footer className="py-6 md:py-8 lg:py-10">
-    <Container>
+    <Container className="max-w-4xl">
       <div className="flex justify-between items-center">
         <Link href="/">
           <a className="flex flex-row items-center fill-current transition duration-300 ease-in-out mr-6">

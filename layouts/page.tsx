@@ -1,6 +1,6 @@
 import Head from '../components/Head';
 import Header from '../components/Header';
-import PageContainer from '../components/PageContainer';
+import Container from '../components/Container';
 import importScript from '../components/import-script';
 import Footer from '../components/Footer';
 
@@ -15,9 +15,9 @@ export default function Layout(frontMatter) {
         }} />
         <Header language={frontMatter.language}/>
         <main className="py-5 md:py-10">
-          <PageContainer className="prose">
+          <Container className="prose max-w-2xl">
             {content}
-          </PageContainer>
+          </Container>
         </main>
         <Footer />
       </>

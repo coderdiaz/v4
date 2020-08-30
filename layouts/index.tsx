@@ -2,7 +2,7 @@ import Head from '../components/Head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import importScript from '../components/import-script';
-import PageContainer from '../components/PageContainer';
+import Container from '../components/Container';
 
 export default function Layout(frontMatter) {
   return ({ children: content }) => {
@@ -15,9 +15,9 @@ export default function Layout(frontMatter) {
         }} />
         <Header language={frontMatter.language}/>
         <main>
-          <PageContainer>
+          <Container className="max-w-2xl">
             {content}
-          </PageContainer>
+          </Container>
         </main>
         <Footer />
       </>

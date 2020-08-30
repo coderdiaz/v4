@@ -13,7 +13,7 @@ const Header = ({ language }: HeaderProps) => {
   const menus = SiteData.site[language].menu;
 
   return <header className="py-6 md:py-8 lg:py-10 border-t-4 border-primary-400">
-    <Container>
+    <Container className="max-w-4xl">
       <div className="flex items-center ">
         <Link href="/">
           <a className="flex flex-row items-center fill-current transition duration-300 ease-in-out mr-6">

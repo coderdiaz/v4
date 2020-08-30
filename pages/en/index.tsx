@@ -3,7 +3,7 @@ import Link from 'next/link';
 import SiteData from '../../site.json';
 import OssProjects from '../../data/en/oss-projects.json';
 import Layout from '../../components/Layout';
-import PageContainer from '../../components/PageContainer';
+import Container from '../../components/Container';
 import Shots from '../../components/Shots';
 import IShot from '../../interfaces/IShot';
 import OpenSourceItem from '../../components/OpenSourceItem';
@@ -35,16 +35,16 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     <section className="py-5 md:py-10 lg:pt-20 lg:pb-0 bg-repeat-x" style={{
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
-      <PageContainer>
+      <Container className="max-w-3xl">
         <h1 className="text-3.5xl font-display md:text-7.5xl lg:text-8.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
         <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
         <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
-      </PageContainer>
+      </Container>
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">
-      <PageContainer>
+      <Container className="max-w-3xl">
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           What I can help you with
         </h2>
@@ -67,10 +67,10 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             </div>
           </div>
         </div>
-      </PageContainer>
+      </Container>
     </section>
     <section className="hidden py-5 md:py-10">
-      <PageContainer>
+      <Container className="max-w-3xl">
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Latests Posts</h2>
         <div className="">
           <article className="pb-8 text-gray-700">
@@ -88,10 +88,10 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             <p className="md:text-lg leading-relaxed dark:text-gray-500">Alias culpa quae pariatur veniam explicabo vero quas optio. Nihil et error vel ut exercitationem fuga. Magni perspiciatis nulla corrupti fugiat.</p>
           </article>
         </div>
-      </PageContainer>
+      </Container>
     </section>
     <section className="py-5 md:py-10">
-      <PageContainer>
+      <Container className="max-w-3xl">
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">My Recent Shots</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
@@ -106,10 +106,10 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             </svg>
           </a>
         </div>
-      </PageContainer>
+      </Container>
     </section>
     <section className="py-5 md:py-10">
-      <PageContainer>
+      <Container className="max-w-3xl">
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           OSS Projects
         </h2>
@@ -118,7 +118,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
             (project, index) => <OpenSourceItem key={index} item={project} />
           )}
         </div>
-      </PageContainer>
+      </Container>
     </section>
   </Layout>;
 };
