@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { parseISO, format } from 'date-fns';
 
 const BlogPost = ({ frontMatter }) => {
   const slug = frontMatter.__resourcePath
@@ -7,7 +8,7 @@ const BlogPost = ({ frontMatter }) => {
     <dl>
       <dt className="sr-only">Publicado el</dt>
       <dd className="text-base leading-6 font-medium text-gray-500">
-        <time dateTime="2020-08-10T13:30:00.000Z">31 de Agosto, 2020</time>
+        <time dateTime="2020-08-10T13:30:00.000Z">{format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}</time>
       </dd>
     </dl>
     <Link href={slug}>

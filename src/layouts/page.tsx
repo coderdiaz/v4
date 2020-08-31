@@ -8,7 +8,7 @@ export default function Layout({ children: content, frontMatter }) {
   importScript('/js/prevent.flash.js');
   return (
     <>
-      <Head meta={{
+      <Head language={frontMatter.language} meta={{
         title: frontMatter.title,
         description: frontMatter.description
       }} />

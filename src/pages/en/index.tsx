@@ -10,6 +10,7 @@ import OpenSourceItem from '@/components/OpenSourceItem';
 import SoftwareEngineering from '@/assets/images/software-engineering.svg';
 import UIImage from '@/assets/images/ui-design.svg';
 import Mentoring from '@/assets/images/mentoring.svg';
+import Head from '@/components/Head';
 
 export { getStaticProps } from '@/getStaticProps';
 
@@ -19,6 +20,9 @@ interface IIndexPageProps {
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout language="en">
+    <Head meta={{
+      image: '/og-en.png',
+    }} />
     <section className="py-5 md:py-10 lg:pt-20 lg:pb-0 bg-repeat-x" style={{
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
@@ -26,8 +30,19 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         <h1 className="text-3.5xl font-display md:text-7.5xl lg:text-8.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br />and UI Designer
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-2">I've recently been learning <span className="text-blue-600 dark:text-blue-200">Flutter</span> to create an application to manage my personal finances and web subscriptions. Also, I like to share and teach what I learned at meetups and conferences about web development.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hi there, my name is <span className="font-semibold">Javier</span>. I'm located in Mexico City, Ajuaaa!! Currently, I'm developing platforms and websites using the Jamstack approach, and working as a Tech Lead of Developers Squad at <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://bedu.org">Bedu</a>. I mostly do <span className="font-medium text-yellow-600">front-end</span> development but also <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Also, I like to share and teach what I learned in meetings and conferences about web development and also help people grow using software. If you want to learn about web development and software engineering, I am creating educative content on Youtube on my channel called <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://twitter.com/dimeloencodigo">@dimeloencodigo</a>.
+        </p>
+        <ul className="flex flex-col">
+          <li className="mb-2">
+            <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href={SiteData.social.twitter}>@coderdiaz on twitter</a>
+          </li>
+          <li>
+            <Link href="/acerca">
+              <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500">More about me</a>
+            </Link>
+          </li>
+        </ul>
       </Container>
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">

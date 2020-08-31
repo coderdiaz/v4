@@ -5,6 +5,7 @@ import { useRouter } from 'next/dist/client/router';
 
 interface IHeadProps {
   children?: React.ReactNode;
+  language?: string;
   meta?: {
     title?: string;
     description?: string;
@@ -13,11 +14,11 @@ interface IHeadProps {
   };
 }
 
-const Head = ({ children, meta = {} }: IHeadProps) => {
+const Head = ({ children, language = 'es', meta = {} }: IHeadProps) => {
   const router = useRouter();
   return <>
     <NextHead>
-      <title>{meta.title || SiteData.site.en.title}</title>
+      <title>{meta.title || SiteData.site[language].title}</title>
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -25,17 +26,17 @@ const Head = ({ children, meta = {} }: IHeadProps) => {
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta content={meta.description || SiteData.site.en.description} name="description" />
-      <meta content={meta.keywords ? meta.keywords.join(',') : SiteData.site.en.keywords.join(',')} name="keywords" />
+      <meta content={meta.description || SiteData.site[language].description} name="description" />
+      <meta content={meta.keywords ? meta.keywords.join(',') : SiteData.site[language].keywords.join(',')} name="keywords" />
       <meta property="og:url" content={`https://coderdiaz.me${router.asPath}`} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content={meta.title || SiteData.site.en.title } />
-      <meta property="og:image" content={meta.image || SiteData.site.en.image} />
+      <meta property="og:site_name" content={meta.title || SiteData.site[language].title } />
+      <meta property="og:image" content={meta.image || SiteData.site[language].image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@coderdiaz" />
-      <meta name="twitter:title" content={meta.title || SiteData.site.en.title} />
-      <meta name="twitter:description" content={meta.description || SiteData.site.en.description} />
-      <meta name="twitter:image" content={`https://coderdiaz.me${meta.image || SiteData.site.en.image}`} />
+      <meta name="twitter:title" content={meta.title || SiteData.site[language].title} />
+      <meta name="twitter:description" content={meta.description || SiteData.site[language].description} />
+      <meta name="twitter:image" content={`https://coderdiaz.me${meta.image || SiteData.site[language].image}`} />
       {children}
     </NextHead>
   </>

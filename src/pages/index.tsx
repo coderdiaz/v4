@@ -27,20 +27,21 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
       description: "Ingeniero de Software en Ciudad de México creando increíbles experiencías a través de Jamstack y Microservicios"
     }} />
     <section className="py-5 md:py-10 lg:pt-10 lg:pb-10 bg-repeat-x" style={{
-      backgroundImage: "url('/images/hero-cover.svg')"
+      backgroundImage: "url('/images/hero-cover.svg')",
     }}>
       <Container className="max-w-3xl">
         <h1 className="text-3.5xl font-display md:text-7.5xl lg:text-8.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br /> y Diseñador UI
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>. Además, me gusta compartir y enseñar lo que he aprendido en meetups y conferencias sobre desarrollo web.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Además, me gusta compartir y enseñar lo que he aprenddo en meetups y conferencias sobre desarrollo web; y también ayudo a las personas a crecer usando software. Si quieres aprender sobre desarrollo web e ingeniería de software, estoy creando contenido educativo en Youtube en mi canal llamado <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://twitter.com/dimeloencodigo">@dimeloencodigo</a>.</p>
         <ul className="flex flex-col">
           <li className="mb-2">
-            <a className="inline-block font-semibold text-lg text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href={SiteData.social.twitter}>Encuentrame como @coderdiaz en twitter</a>
+            <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href={SiteData.social.twitter}>Encuentrame como @coderdiaz en twitter</a>
           </li>
           <li>
             <Link href="/acerca">
-              <a className="inline-block font-semibold text-lg text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500">Conoce más acerca de mí</a>
+              <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500">Conoce más acerca de mí</a>
             </Link>
           </li>
         </ul>

@@ -4,7 +4,7 @@ export default {
       title: "Javier Diaz — Software Engineer and UI Designer based on Mexico City",
       description: "Software Engineer and UI Designer based on Mexico City creating awesome experiences with Jamstack and Microservices",
       keywords: ["technology", "software", "web", "development", "fullstack", "software engineer", "developer"],
-      image: "/og.png",
+      image: "/og-en.png",
       menu: [
         { name: "About", href: "/en/about" },
         { name: "Home", href: "/en" }

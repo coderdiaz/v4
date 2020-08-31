@@ -14,7 +14,6 @@ const Layout = ({ children, language = 'es' }: ILayoutProps) => {
 
   return (
     <>
-      <Head />
       <Header language={language} />
       <main>
         {children}
