@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
+import { DiscussionEmbed } from 'disqus-react';
+import { parseISO, format } from 'date-fns';
+import es from 'date-fns/locale/es';
 import Head from '@/components/Head';
 import Header from '@/components/Header';
 import Container from '@/components/Container';
 import importScript from '@/components/import-script';
 import Footer from '@/components/Footer';
 import Avatar from '@/assets/images/avatar.png';
-import { DiscussionEmbed } from 'disqus-react';
 
 export default function Layout({ children: content, frontMatter }) {
   importScript('/js/prevent.flash.js');
@@ -28,8 +30,8 @@ export default function Layout({ children: content, frontMatter }) {
             <div className="flex items-center">
               <img className="w-6 rounded-full mr-2" src={Avatar} />
               <div className="inline-block text-gray-600 dark:text-gray-400 text-base">
-                Javier Diaz / <time dateTime={frontMatter.date.toISOString()}>
-                  {frontMatter.date.toISOString()}
+                Javier Diaz / <time className="uppercase tracking-wider text-sm" dateTime={frontMatter.date.toISOString()}>
+                  {format(parseISO(frontMatter.date.toISOString()), 'MMMM dd, yyyy', { locale: es })}
                 </time>
               </div>
             </div>
