@@ -24,7 +24,9 @@ export default function Layout(frontMatter) {
               <div className="flex items-center">
                 <img className="w-6 rounded-full mr-2" src={Avatar} />
                 <div className="inline-block text-gray-600 dark:text-gray-400 text-base">
-                  Javier Diaz / {frontMatter.date}
+                  Javier Diaz / <time dateTime={frontMatter.date.toISOString()}>
+                    {frontMatter.date.toISOString()}
+                  </time>
                 </div>
               </div>
             </Container>

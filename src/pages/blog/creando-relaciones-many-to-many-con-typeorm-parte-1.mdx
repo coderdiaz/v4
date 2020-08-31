@@ -1,0 +1,140 @@
+---
+layout: post
+title: "Creando relaciones many-to-many con TypeORM: Parte 1"
+description: "Las relaciones many-to-many o también conocidas como relaciones muchos a muchos, es una estrategia en base de datos que nos permite relacionar dos o más entidades en una tabla de referencia o también llamada, pivote."
+date: 2020-08-31T01:19:08.895Z
+language: es
+---
+
+import Figure from '@/components/Figure';
+
+> Las relaciones `many-to-many` o también conocidas como relaciones muchos a muchos, es una estrategía en base de datos que nos permite relacionar dos o más entidades en una tabla de referencia, o también llamada pivote.
+
+Antes de iniciar, lo primero que debemos conocer es cómo estará conformada nuestra base de datos, y para esto tu ya te habrás puesto manos a la obra para diseñarla de acuerdo a la necesidades de tu proyecto.
+
+Para esto pondremos de ejemplo un caso bastante común, tenemos un sistema de contenidos en el cual creamos publicaciones (post) y estás son organizadas a través de categorías (category). Para lograr esto, debemos tener en cuenta que el contenido deberá estar relacionado con una o muchas categorías, ya que pueden existir contenidos que tengan referencia a diferentes temáticas.
+
+Para este ejercicio, tendremos de referencia lo siguiente:
+- Entidad `Post`, tabla encargada de almacenar nuestras publicaciones.
+- Entidad `Category`, tabla en la que registraremos cada una de las categorías existentes.
+- Y nuestra tabla pivote, que contendrá la relación entre el contenido y nuestras categorías.
+
+## Creando entidades en TypeORM
+Si eres nuevo utilizando TypeORM y no conoces que es una `entidad`, vamos a dar un pequeño repaso.
+
+> Una Entidad (Entity), es una clase que se asigna a una tabla dentro de nuestra base de datos, permitiéndonos identificar columnas y tipos de datos cuando creamos, modificamos o eliminamos elementos a través de TypeORM.
+
+Ya que conoces un poco más sobre que es una entidad, vamos a crear una para nuestras categorías:
+
+```ts
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+@Entity()
+export class Category {
+	@PrimaryGeneratedColumn()
+	id: number;
+
+	@Column()
+	name: string;
+
+	@Column()
+	description: string;
+}
+```
+
+Y ahora la entidad para las publicaciones:
+```ts
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+@Entity()
+export class Post {
+	@PrimaryGeneratedColumn()
+	id: number;
+
+	@Column()
+	title: string;
+
+	@Column()
+	description: string;
+
+	@Column()
+	content: string;
+
+	@Column({ type: "timestamp" })
+	publishedAt: Date;
+}
+```
+
+Estas entidades que hemos creado, nos habrán dado como resultado las siguientes tablas:
+
+<Figure src="/static/creando-relaciones-many-to-many-con-typeorm/first-database-schema.png" alt="Tablas autogeneradas por TypeORM" />
+
+## Generando una relación
+Ahora, el siguiente paso es generar nuestra relación entre las dos tablas que hemos creado previamente, TypeORM nos provee del decorador `@ManyToMany` para crear relaciones muchos a muchos de una manera sencilla.
+
+> El decorador `@ManyToMany()` requiere del decorador `@JoinTable()` para crear este tipo de relaciones.
+
+Lo que haremos es modificar nuestra entidad de publicaciones para agregar la relación con la tabla de categorías.
+
+```ts
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from 'typeorm';
+import { Category } from './category';
+
+@Entity()
+export class Post {
+	@PrimaryGeneratedColumn()
+	id: number;
+
+	@Column()
+	title: string;
+
+	@Column()
+	description: string;
+
+	@Column()
+	content: string;
+
+	@Column({ type: "timestamp" })
+	publishedAt: Date;
+
+	@ManyToMany(type => Category)
+	@JoinTable()
+	categories: Category[];
+}
+```
+
+Esta modificación nos dara como resultado la creación de manera automática de la tabla pivote, donde estarán nuestras referencias de relación:
+
+<Figure src="/static/creando-relaciones-many-to-many-con-typeorm/database-schema.png" alt="Modelo entidad relación" />
+
+Ahora solo queda que hagamos la prueba para verificar qué la relación funciona, podemos hacer uso de un repositorio de TypeORM o a través del `QueryBuilder`, con cualquiera de estás dos opciones funciona.
+
+```ts
+// Utilizando repositorio
+import { Post } from './Post';
+...
+const postRepository = connection.getRepository(Post);
+const posts = await postRepository.find({
+	relations: ["categories"],
+});
+
+// console.log(posts);
+```
+
+```ts
+// Utilizando QueryBuilder
+import { Post } from './Post';
+...
+const posts = await connection
+    .getRepository(Post)
+    .createQueryBuilder("post")
+    .leftJoinAndSelect("post.categories", "category")
+    .getMany();
+
+// console.log(posts);
+```
+
+> Te puedes ayudar creando contenido de prueba dentro de tu base de datos, o si ya tienes conocimiento en TypeORM también lo puedes hacer desde ahí. De esta manera te darás una idea más precisa de si tu relación funciona adecuadamente.
+
+## Conclusión
+Como has podido ver, esta es una de las maneras más sencillas de crear relaciones many-to-many entre tus tablas utilizando TypeORM, pero seguramente te ha pasado que no es un proyecto nuevo, si no uno ya existente y con una base de datos que ya funciona en producción. En la siguiente parte, vamos a conectar una relación many-to-many con una base de datos ya existente.
