@@ -18,6 +18,7 @@
     "@mdx-js/react": "1.5.8",
     "@next/mdx": "9.4.1",
     "@tailwindcss/typography": "^0.2.0",
+    "disqus-react": "^1.0.9",
     "ga-lite": "^2.1.0",
     "mdx-prism": "^0.3.1",
     "next": "9.4.1",

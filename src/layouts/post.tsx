@@ -1,22 +1,25 @@
+import { useRouter } from 'next/router';
 import Head from '@/components/Head';
 import Header from '@/components/Header';
 import Container from '@/components/Container';
 import importScript from '@/components/import-script';
 import Footer from '@/components/Footer';
 import Avatar from '@/assets/images/avatar.png';
+import { DiscussionEmbed } from 'disqus-react';
 
 export default function Layout(frontMatter) {
   return ({ children: content }) => {
     importScript('/js/prevent.flash.js');
+    const router = useRouter();
 
     return (
       <>
         <Head meta={{
-          title: frontMatter.title
+          title: frontMatter.title,
         }} />
         <Header language={frontMatter.language}/>
         <main className="py-5 md:py-10">
-          <article>
+          <article className="mb-10">
             <Container className="max-w-2xl mb-10">
               <h1 className="dark:text-white font-display text-2xl md:text-2.5xl lg:text-3.5xl leading-tight mb-4">
                 {frontMatter.title}
@@ -34,6 +37,15 @@ export default function Layout(frontMatter) {
               {content}
             </Container>
           </article>
+          <Container className="max-w-2xl">
+            <DiscussionEmbed
+              shortname="coderdiaz"
+              config={{
+                title: frontMatter.title,
+                url: `https://coderdiaz.me${router.asPath}`,
+                identifier: router.asPath,
+              }} />
+          </Container>
         </main>
         <Footer />
       </>
