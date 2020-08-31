@@ -26,19 +26,19 @@ const Header = ({ language }: HeaderProps) => {
         <ul className="hidden md:flex justify-start items-center">
           <li className="items-center">
             <Link href="/">
-              <a className={`inline-block hover:text-primary-900 hover:bg-gray-50 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold px-2 py-1 transition duration-300 ease-in-out ${language === 'es' ? 'text-primary-900 dark:text-primary-400' : 'text-dark-800 dark:text-gray-500'}`}>ES</a>
+              <a className={`inline-block hover:text-primary-900 hover:bg-gray-50 dark-hover:text-white dark-hover:bg-dark-600 rounded font-semibold px-2 py-1 transition duration-300 ease-in-out ${language === 'es' ? 'text-primary-900 dark:text-primary-400' : 'text-dark-800 dark:text-gray-500'}`}>ES</a>
             </Link>
           </li>
           <li className="items-center">
             <Link href="/en">
-              <a className={`inline-block hover:text-primary-900 hover:bg-gray-50 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold px-2 py-1 transition duration-300 ease-in-out ${language === 'en' ? 'text-primary-900 dark:text-primary-400' : 'text-dark-800 dark:text-gray-500'}`}>EN</a>
+              <a className={`inline-block hover:text-primary-900 hover:bg-gray-50 dark-hover:text-white dark-hover:bg-dark-600 rounded font-semibold px-2 py-1 transition duration-300 ease-in-out ${language === 'en' ? 'text-primary-900 dark:text-primary-400' : 'text-dark-800 dark:text-gray-500'}`}>EN</a>
             </Link>
           </li>
         </ul>
         <ul className="flex w-full justify-end items-center">
           {menus.map((item, index) => <li key={index} className="hidden md:block mr-2">
             <Link href={item.href}>
-              <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-bold py-2 px-4 transition duration-300 ease-in-out">{item.name}</a>
+              <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-semibold py-2 px-4 transition duration-300 ease-in-out">{item.name}</a>
             </Link>
           </li>)}
           <li className="md:ml-10 mr-3 md:-mr-4 items-center">

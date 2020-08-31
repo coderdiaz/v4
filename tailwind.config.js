@@ -212,18 +212,18 @@ module.exports = {
           },
           h1: {
             color: theme('colors.gray.900'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.display')}`,
           },
           h2: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.primary.500'),
             fontFamily: `${theme('fontFamily.display')}`
           },
           h3: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.primary.500'),
             fontFamily: `${theme('fontFamily.display')}`
           },
           h4: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.primary.500'),
             fontFamily: `${theme('fontFamily.display')}`
           },
           'ol li:before': {
@@ -240,12 +240,15 @@ module.exports = {
             fontWeight: theme('fontWeight.bold'),
             color: theme('colors.primary.300'),
           },
+          img: {
+            borderRadius: theme('borderRadius.lg'),
+          },
           'a:hover': {
             color: theme('colors.primary.500'),
           },
           pre: {
-            color: theme('colors.gray.200'),
-            backgroundColor: theme('colors.gray.800'),
+            color: theme('colors.dark'),
+            backgroundColor: theme('colors.gray.50'),
           },
           blockquote: {
             color: theme('colors.gray.900'),
