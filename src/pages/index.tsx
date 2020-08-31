@@ -1,4 +1,3 @@
-import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import SiteData from '@/seo-next.config';
 import OssProjects from '@/data/oss-projects.json';
@@ -12,24 +11,11 @@ import SoftwareEngineering from '@/assets/images/software-engineering.svg';
 import UIImage from '@/assets/images/ui-design.svg';
 import Mentoring from '@/assets/images/mentoring.svg';
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://api.dribbble.com/v2/user/shots?per_page=4', {
-    headers: {
-      authorization: `Bearer ${process.env.DRIBBBLE_TOKEN}`,
-    },
-  });
-  const shots = await res.json();
-
-  return {
-    props: {
-      shots,
-    },
-  };
-}
-
 interface IIndexPageProps {
   shots: IShot[];
 }
+
+export { getStaticProps } from '@/getStaticProps';
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout>
