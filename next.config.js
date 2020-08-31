@@ -11,4 +11,7 @@ module.exports = withImages(withMdxEnhanced({
     require('remark-code-titles'),
   ],
   rehypePlugins: [mdxPrism],
-})());
+  usesSrc: true,
+})({
+  pageExtensions: ['ts', 'tsx', 'mdx'],
+}));
