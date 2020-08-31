@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "Creando relaciones many-to-many con TypeORM: Parte 1"
-description: "Las relaciones many-to-many o también conocidas como relaciones muchos a muchos, es una estrategia en base de datos que nos permite relacionar dos o más entidades en una tabla de referencia o también llamada, pivote."
+description: "Las relaciones many-to-many o también conocidas como relaciones muchos a muchos, es una estrategía en base de datos que nos permite relacionar dos o más entidades en una tabla de referencia, o también llamada pivote."
 date: 2020-08-31T01:19:08.895Z
+featuredImage: /static/creando-relaciones-many-to-many-con-typeorm-parte-1.png
 language: es
 ---
 
@@ -67,7 +68,7 @@ export class Post {
 
 Estas entidades que hemos creado, nos habrán dado como resultado las siguientes tablas:
 
-<Figure src="/static/creando-relaciones-many-to-many-con-typeorm/first-database-schema.png" alt="Tablas autogeneradas por TypeORM" />
+<Figure src="/static/creando-relaciones-many-to-many-con-typeorm-parte-1/first-database-schema.png" alt="Tablas autogeneradas por TypeORM" />
 
 ## Generando una relación
 Ahora, el siguiente paso es generar nuestra relación entre las dos tablas que hemos creado previamente, TypeORM nos provee del decorador `@ManyToMany` para crear relaciones muchos a muchos de una manera sencilla.
@@ -105,7 +106,7 @@ export class Post {
 
 Esta modificación nos dara como resultado la creación de manera automática de la tabla pivote, donde estarán nuestras referencias de relación:
 
-<Figure src="/static/creando-relaciones-many-to-many-con-typeorm/database-schema.png" alt="Modelo entidad relación" />
+<Figure src="/static/creando-relaciones-many-to-many-con-typeorm-parte-1/database-schema.png" alt="Modelo entidad relación" />
 
 Ahora solo queda que hagamos la prueba para verificar qué la relación funciona, podemos hacer uso de un repositorio de TypeORM o a través del `QueryBuilder`, con cualquiera de estás dos opciones funciona.
 
