@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SiteData from '@/seo-next.config';
 import OssProjects from '@/data/oss-projects.json';
 import Layout from '@/components/Layout';
@@ -25,23 +26,32 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
       title: "Javier Diaz - Ingeniero de Software y Diseñador UI",
       description: "Ingeniero de Software en Ciudad de México creando increíbles experiencías a través de Jamstack y Microservicios"
     }} />
-    <section className="py-5 md:py-10 lg:pt-20 lg:pb-0 bg-repeat-x" style={{
+    <section className="py-5 md:py-10 lg:pt-10 lg:pb-10 bg-repeat-x" style={{
       backgroundImage: "url('/images/hero-cover.svg')"
     }}>
       <Container className="max-w-3xl">
         <h1 className="text-3.5xl font-display md:text-7.5xl lg:text-8.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Software Engineer <br /> y Diseñador UI
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-2">He estado aprendiendo recientemente <span className="text-blue-600 dark:text-blue-200">Flutter</span> para crear una aplicación para administrar mis finanzas personales y suscripciones web. Además, me gusta compartir y enseñar lo que he aprendido en meetups y conferencias sobre desarrollo web.</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>. Además, me gusta compartir y enseñar lo que he aprendido en meetups y conferencias sobre desarrollo web.</p>
+        <ul className="flex flex-col">
+          <li className="mb-2">
+            <a className="inline-block font-semibold text-lg text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href={SiteData.social.twitter}>Encuentrame como @coderdiaz en twitter</a>
+          </li>
+          <li>
+            <Link href="/acerca">
+              <a className="inline-block font-semibold text-lg text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500">Conoce más acerca de mí</a>
+            </Link>
+          </li>
+        </ul>
       </Container>
     </section>
     <section className="py-5 md:pt-10 md:pb-0">
       <Container className="max-w-3xl">
-        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimas publicaciones</h2>
-        <div className="">
-          <BlogPost frontMatter={ManyToManyPartOne} />
-        </div>
+        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+          Publicaciones más recientes
+        </h2>
+        <BlogPost frontMatter={ManyToManyPartOne} />
       </Container>
     </section>
     <section className="pt-5 pb-10 md:py-10 lg:py-20">

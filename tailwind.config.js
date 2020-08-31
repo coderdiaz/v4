@@ -215,15 +215,15 @@ module.exports = {
             fontFamily: `${theme('fontFamily.display')}`,
           },
           h2: {
-            color: theme('colors.primary.500'),
+            color: theme('colors.primary.300'),
             fontFamily: `${theme('fontFamily.display')}`
           },
           h3: {
-            color: theme('colors.primary.500'),
+            color: theme('colors.primary.300'),
             fontFamily: `${theme('fontFamily.display')}`
           },
           h4: {
-            color: theme('colors.primary.500'),
+            color: theme('colors.primary.300'),
             fontFamily: `${theme('fontFamily.display')}`
           },
           'ol li:before': {
@@ -239,12 +239,17 @@ module.exports = {
           a: {
             fontWeight: theme('fontWeight.bold'),
             color: theme('colors.primary.300'),
+            textDecoration: 'none !important',
+            borderBottom: '2px solid',
+            borderColor: theme('colors.primary.300'),
+            transition: 'all .2s ease-in-out'
           },
           img: {
             borderRadius: theme('borderRadius.lg'),
           },
           'a:hover': {
-            color: theme('colors.primary.500'),
+            color: theme('colors.primary.400'),
+            borderColor: theme('colors.primary.400'),
           },
           pre: {
             color: theme('colors.dark'),
