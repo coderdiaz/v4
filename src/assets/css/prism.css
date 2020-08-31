@@ -1,3 +1,4 @@
+/* purgecss start ignore */
 /* PrismJS 1.21.0
 https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+bash+dart+docker+graphql+plsql+python+jsx+tsx+sass+scss+sql+toml+typescript+typoscript+yaml */
 /**
@@ -122,3 +123,4 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
  .token.inserted {
    color: green;
  }
+ /* purgecss end ignore */
