@@ -31,7 +31,9 @@ const Head = ({ children, language = 'es', meta = {} }: IHeadProps) => {
       <meta property="og:url" content={`https://coderdiaz.me${router.asPath}`} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={meta.title || SiteData.site[language].title } />
-      <meta property="og:image" content={meta.image || SiteData.site[language].image} />
+      <meta property="og:title" content={meta.title || SiteData.site[language].title } />
+      <meta property="og:description" content={meta.description || SiteData.site[language].description } />
+      <meta property="og:image" content={`https://coderdiaz.me${meta.image || SiteData.site[language].image}`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@coderdiaz" />
       <meta name="twitter:title" content={meta.title || SiteData.site[language].title} />
