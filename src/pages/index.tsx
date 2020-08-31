@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import SiteData from '@/seo-next.config';
 import OssProjects from '@/data/oss-projects.json';
 import Layout from '@/components/Layout';
@@ -10,12 +9,15 @@ import Head from '@/components/Head';
 import SoftwareEngineering from '@/assets/images/software-engineering.svg';
 import UIImage from '@/assets/images/ui-design.svg';
 import Mentoring from '@/assets/images/mentoring.svg';
+import BlogPost from '@/components/BlogPost';
 
 interface IIndexPageProps {
   shots: IShot[];
 }
 
 export { getStaticProps } from '@/getStaticProps';
+
+import { frontMatter as ManyToManyPartOne } from './blog/creando-relaciones-many-to-many-con-typeorm-parte-1.mdx';
 
 const IndexPage = ({ shots }: IIndexPageProps) => {
   return <Layout>
@@ -31,27 +33,14 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
           Software Engineer <br /> y Diseñador UI
         </h1>
         <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out underline" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-2">He estado aprendiendo recientemente <span className="text-blue-600 dark:text-blue-200">Flutter</span> para crear una aplicación para administrar mis finanzas personales y suscripciones web. Además, me gusta compartir y enseñar lo que aprendí en reuniones y conferencias sobre desarrollo web..</p>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-2">He estado aprendiendo recientemente <span className="text-blue-600 dark:text-blue-200">Flutter</span> para crear una aplicación para administrar mis finanzas personales y suscripciones web. Además, me gusta compartir y enseñar lo que he aprendido en meetups y conferencias sobre desarrollo web.</p>
       </Container>
     </section>
-    <section className="hidden py-5 md:pt-10 md:pb-0">
+    <section className="py-5 md:pt-10 md:pb-0">
       <Container className="max-w-3xl">
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimas publicaciones</h2>
         <div className="">
-          <article className="pb-8 text-gray-700">
-            <dl>
-              <dt className="sr-only">Publicado el</dt>
-              <dd className="text-base leading-6 font-medium text-gray-500">
-                <time dateTime="2020-08-10T13:30:00.000Z">21 de Agosto, 2020</time>
-              </dd>
-            </dl>
-            <h3 className="mb-1 text-lg md:text-xl font-display text-dark-900 dark:text-gray-200 hover:text-primary-800 dark-hover:text-primary-500 transition duration-300 ease-in-out">
-              <Link href="/">
-                <a>Loremp Ipsum</a>
-              </Link>
-            </h3>
-            <p className="md:text-lg leading-relaxed dark:text-gray-500">Alias culpa quae pariatur veniam explicabo vero quas optio. Nihil et error vel ut exercitationem fuga. Magni perspiciatis nulla corrupti fugiat.</p>
-          </article>
+          <BlogPost frontMatter={ManyToManyPartOne} />
         </div>
       </Container>
     </section>

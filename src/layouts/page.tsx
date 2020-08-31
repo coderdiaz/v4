@@ -4,24 +4,21 @@ import Container from '../components/Container';
 import importScript from '../components/import-script';
 import Footer from '../components/Footer';
 
-export default function Layout(frontMatter) {
-  return ({ children: content }) => {
-    importScript('/js/prevent.flash.js');
-
-    return (
-      <>
-        <Head meta={{
-          title: frontMatter.title,
-          description: frontMatter.description
-        }} />
-        <Header language={frontMatter.language}/>
-        <main className="py-5 md:py-10">
-          <Container className="prose max-w-2xl">
-            {content}
-          </Container>
-        </main>
-        <Footer />
-      </>
-    )
-  }
+export default function Layout({ children: content, frontMatter }) {
+  importScript('/js/prevent.flash.js');
+  return (
+    <>
+      <Head meta={{
+        title: frontMatter.title,
+        description: frontMatter.description
+      }} />
+      <Header language={frontMatter.language}/>
+      <main className="py-5 md:py-10">
+        <Container className="prose max-w-2xl">
+          {content}
+        </Container>
+      </main>
+      <Footer />
+    </>
+  );
 }
