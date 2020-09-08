@@ -37,7 +37,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
         <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Además, me gusta compartir y enseñar lo que he aprenddo en meetups y conferencias sobre desarrollo web; y también ayudo a las personas a crecer usando software. Si quieres aprender sobre desarrollo web e ingeniería de software, estoy creando contenido educativo en Youtube en mi canal llamado <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://twitter.com/dimeloencodigo">@dimeloencodigo</a>.</p>
         <ul className="flex flex-col">
           <li className="mb-2">
-            <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href={SiteData.social.twitter}>Encuéntrame como @coderdiaz en twitter</a>
+            <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out" href={SiteData.social.twitter}>Encuéntrame como @coderdiaz en twitter</a>
           </li>
           <li>
             <Link href="/acerca">
