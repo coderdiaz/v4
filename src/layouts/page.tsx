@@ -14,7 +14,7 @@ export default function Layout({ children: content, frontMatter }) {
       }} />
       <Header language={frontMatter.language}/>
       <main className="py-5 md:py-10">
-        <Container className="prose max-w-2xl">
+        <Container className="prose max-w-3xl">
           {content}
         </Container>
       </main>

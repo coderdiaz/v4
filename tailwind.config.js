@@ -150,6 +150,9 @@ module.exports = {
       '9xl': '5.5rem',
       '9.5xl': '5.75rem',
       '10xl': '6rem',
+      '10.5xl': '6.25rem',
+      '11xl': '6.5rem',
+      '11.5xl': '6.75rem',
       '12xl': '7rem',
     },
     extend: {

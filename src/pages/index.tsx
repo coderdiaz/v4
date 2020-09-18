@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import SiteData from '@/seo-next.config';
 import OssProjects from '@/data/oss-projects.json';
 import Layout from '@/components/Layout';
@@ -7,9 +6,6 @@ import Shots from '@/components/Shots';
 import IShot from '@/interfaces/IShot';
 import OpenSourceItem from '@/components/OpenSourceItem';
 import Head from '@/components/Head';
-import SoftwareEngineering from '@/assets/images/software-engineering.svg';
-import UIImage from '@/assets/images/ui-design.svg';
-import Mentoring from '@/assets/images/mentoring.svg';
 import BlogPost from '@/components/BlogPost';
 
 interface IIndexPageProps {
@@ -26,59 +22,20 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
       title: "Javier Diaz - Ingeniero de Software y Diseñador UI",
       description: "Ingeniero de Software en Ciudad de México creando increíbles experiencías a través de Jamstack y Microservicios"
     }} />
-    <section className="py-5 md:py-10 lg:pt-10 lg:pb-10 bg-repeat-x" style={{
-      backgroundImage: "url('/images/hero-cover.svg')",
-    }}>
+    <section className="py-5 md:py-10 lg:pt-10 lg:pb-5 bg-repeat-x">
       <Container className="max-w-3xl">
-        <h1 className="text-3.5xl font-display md:text-7.5xl lg:text-8.5xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
-          Software Engineer <br /> y Diseñador UI
+        <h1 className="text-3.5xl font-display md:text-4xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
+          Hola, soy Javier Diaz
         </h1>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Hola, me llamo <span className="font-semibold">Javier</span> y vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
-        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Además, me gusta compartir y enseñar lo que he aprenddo en meetups y conferencias sobre desarrollo web; y también ayudo a las personas a crecer usando software. Si quieres aprender sobre desarrollo web e ingeniería de software, estoy creando contenido educativo en Youtube en mi canal llamado <a className="font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500" href="https://twitter.com/dimeloencodigo">@dimeloencodigo</a>.</p>
-        <ul className="flex flex-col">
-          <li className="mb-2">
-            <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out" href={SiteData.social.twitter}>Encuéntrame como @coderdiaz en twitter</a>
-          </li>
-          <li>
-            <Link href="/acerca">
-              <a className="inline-block font-semibold text-primary-300 hover:text-primary-500 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-500">Conoce más acerca de mí</a>
-            </Link>
-          </li>
-        </ul>
+        <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Soy <span className="font-semibold">Ingeniero de Software y Diseñador UI</span>. Vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-400 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-400" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
       </Container>
     </section>
-    <section className="py-5 md:pt-10 md:pb-0">
+    <section className="py-5 md:pt-5 md:pb-0">
       <Container className="max-w-3xl">
         <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
-          Publicaciones más recientes
+          Más popular
         </h2>
         <BlogPost frontMatter={ManyToManyPartOne} />
-      </Container>
-    </section>
-    <section className="pt-5 pb-10 md:py-10 lg:py-20">
-      <Container className="max-w-3xl">
-        <h2 className="inline-block font-display text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
-          En que puedo ayudarte
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4 mb-6">
-          <div className="col-span-2 md:col-span-1 p-8 bg-gray-50 dark:bg-gray-300 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
-            <img className="mb-4" src={SoftwareEngineering} />
-            <h4 className="font-display text-lg md:text-xl mb-2">Desarrollo de Software</h4>
-            <p className="text-opacity-50">Construyo experiencias de software increíbles utilizando mis mejores habilidades y tecnologías acorde a tu producto.</p>
-          </div>
-          <div className="col-span-2 md:col-span-1 p-8 bg-gray-50 dark:bg-gray-300 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg">
-            <img className="mb-4" src={UIImage} />
-            <h4 className="font-display text-lg md:text-xl mb-2">Interfaces de Usuario</h4>
-            <p className="text-opacity-50">Diseño productos <span className="font-medium">amigables y elegantes</span> para el usuario. Construyo <span className="font-medium">experiencias placenteras</span> que permita a tus usuarios cumplir sus objetivos.</p>
-          </div>
-          <div className="col-span-2 p-8 bg-gray-50 dark:bg-gray-300 dark:bg-opacity-50 text-darken text-opacity-75 rounded-lg flex flex-col md:flex-row md:items-center">
-            <img width="370" className="mb-4 md:mb-0" src={Mentoring} />
-            <div className="md:ml-4">
-              <h4 className="font-display text-lg md:text-xl mb-2">Mentoría</h4>
-              <p className="text-opacity-50">Tienes alguna ídea, consulta o duda sobre algún tema en específico reunámonos y puedo ayudarte a encontrar una solución.</p>
-            </div>
-          </div>
-        </div>
       </Container>
     </section>
     <section className="py-5 md:py-10">
