@@ -23,18 +23,6 @@ const Header = ({ language }: HeaderProps) => {
             <img className="w-10 rounded-full" src={Avatar} alt="Avatar of Javier Diaz Chamorro" />
           </a>
         </Link>
-        <ul className="hidden md:flex justify-start items-center">
-          <li className="items-center">
-            <Link href="/">
-              <a className={`inline-block hover:text-primary-900 hover:bg-gray-50 dark-hover:text-white dark-hover:bg-dark-600 rounded font-semibold px-2 py-1 transition duration-300 ease-in-out ${language === 'es' ? 'text-primary-900 dark:text-primary-400' : 'text-dark-800 dark:text-gray-500'}`}>ES</a>
-            </Link>
-          </li>
-          <li className="items-center">
-            <Link href="/en">
-              <a className={`inline-block hover:text-primary-900 hover:bg-gray-50 dark-hover:text-white dark-hover:bg-dark-600 rounded font-semibold px-2 py-1 transition duration-300 ease-in-out ${language === 'en' ? 'text-primary-900 dark:text-primary-400' : 'text-dark-800 dark:text-gray-500'}`}>EN</a>
-            </Link>
-          </li>
-        </ul>
         <ul className="flex w-full justify-end items-center">
           {menus.map((item, index) => <li key={index} className="hidden md:block mr-2">
             <Link href={item.href}>
