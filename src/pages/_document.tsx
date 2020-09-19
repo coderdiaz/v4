@@ -10,9 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="font-inter bg-white dark:bg-darken leading-normal antialiased" style={{
-          backgroundImage: "url('/images/hero-cover.svg')",
-        }}>
+        <body className="font-inter bg-white dark:bg-darken leading-normal antialiased">
           <Main />
           <NextScript />
         </body>

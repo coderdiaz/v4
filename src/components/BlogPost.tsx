@@ -15,7 +15,7 @@ const BlogPost = ({ frontMatter }) => {
       </dd>
     </dl>
     <Link href={slug}>
-      <a className="mb-2 inline-block text-lg md:text-xl font-display text-dark-900 dark:text-gray-200 hover:text-primary-300 dark-hover:text-primary-300 transition duration-300 ease-in-out leading-tight">{frontMatter.title}</a>
+      <a className="mb-2 inline-block text-lg md:text-xl font-display text-primary-500 hover:text-primary-600 dark:text-primary-300 dark-hover:text-primary-400 transition duration-300 ease-in-out leading-tight">{frontMatter.title}</a>
     </Link>
     <p className="leading-relaxed dark:text-gray-500">{frontMatter.description}</p>
   </article>
