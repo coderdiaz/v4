@@ -125,7 +125,6 @@ module.exports = {
     },
     fontFamily: {
       inter: ['Inter var', ...defaultTheme.fontFamily.sans],
-      display: ['Gilroy', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: '0.5rem',
@@ -215,19 +214,19 @@ module.exports = {
           },
           h1: {
             color: theme('colors.gray.900'),
-            fontFamily: `${theme('fontFamily.display')}`,
+            fontFamily: `${theme('fontFamily.inter')}`,
           },
           h2: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.inter')}`
           },
           h3: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.inter')}`
           },
           h4: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.inter')}`
           },
           'ol li:before': {
             fontWeight: '600',
@@ -311,15 +310,6 @@ module.exports = {
             src: 'url("/fonts/Inter-italic.var-latin.woff2?3.13") format("woff2")',
           },
         },
-        {
-          '@font-face': {
-            fontFamily: 'Gilroy',
-            fontWeight: '600',
-            fontStyle: 'normal',
-            fontDisplay: 'swap',
-            src: 'url("/fonts/Gilroy-semibold.woff2") format("woff2")',
-          },
-        }
       ])
     },
   ],
