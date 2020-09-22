@@ -124,7 +124,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      inter: ['Inter var', ...defaultTheme.fontFamily.sans],
+      display: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: '0.5rem',
@@ -214,19 +214,19 @@ module.exports = {
           },
           h1: {
             color: theme('colors.gray.900'),
-            fontFamily: `${theme('fontFamily.inter')}`,
+            fontFamily: `${theme('fontFamily.display')}`,
           },
           h2: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.inter')}`
+            fontFamily: `${theme('fontFamily.display')}`
           },
           h3: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.inter')}`
+            fontFamily: `${theme('fontFamily.display')}`
           },
           h4: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.inter')}`
+            fontFamily: `${theme('fontFamily.display')}`
           },
           'ol li:before': {
             fontWeight: '600',
@@ -288,30 +288,6 @@ module.exports = {
     }),
     require('tailwindcss-dark-mode')(),
     require('@tailwindcss/typography'),
-    function ({ addBase }) {
-      addBase([
-        {
-          '@font-face': {
-            fontFamily: 'Inter var',
-            fontWeight: '100 900',
-            fontStyle: 'normal',
-            fontNamedInstance: 'Regular',
-            fontDisplay: 'swap',
-            src: 'url("/fonts/Inter-roman.var-latin.woff2?3.13") format("woff2")',
-          },
-        },
-        {
-          '@font-face': {
-            fontFamily: 'Inter var',
-            fontWeight: '100 900',
-            fontStyle: 'italic',
-            fontNamedInstance: 'Italic',
-            fontDisplay: 'swap',
-            src: 'url("/fonts/Inter-italic.var-latin.woff2?3.13") format("woff2")',
-          },
-        },
-      ])
-    },
   ],
   future: {
     removeDeprecatedGapUtilities: true,

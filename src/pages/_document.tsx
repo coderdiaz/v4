@@ -9,8 +9,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <body className="font-inter bg-white dark:bg-darken leading-normal antialiased">
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <body className="font-display bg-white dark:bg-darken leading-normal antialiased">
           <Main />
           <NextScript />
         </body>
