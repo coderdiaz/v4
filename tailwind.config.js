@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const plugin = require('tailwindcss/plugin');
 const mdx = require('@mdx-js/mdx');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
@@ -125,6 +126,7 @@ module.exports = {
     },
     fontFamily: {
       display: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
+      inter: ['Inter'],
     },
     fontSize: {
       xs: '0.5rem',
