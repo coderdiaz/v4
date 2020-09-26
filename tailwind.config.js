@@ -126,7 +126,7 @@ module.exports = {
     },
     fontFamily: {
       display: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
-      inter: ['Inter'],
+      inter: ['Inter', ...defaultTheme.fontFamily.sans],
     },
     fontSize: {
       xs: '0.5rem',
@@ -213,22 +213,24 @@ module.exports = {
           color: theme('colors.gray.700'),
           p: {
             lineHeight: theme('lineHeight.loose'),
+            fontFamily: `${theme('fontFamily.display')}`,
+            letterSpacing: theme('letterSpacing.wide'),
           },
           h1: {
             color: theme('colors.gray.900'),
-            fontFamily: `${theme('fontFamily.display')}`,
+            fontFamily: `${theme('fontFamily.inter')}`,
           },
           h2: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.inter')}`
           },
           h3: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.inter')}`
           },
           h4: {
             color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.display')}`
+            fontFamily: `${theme('fontFamily.inter')}`
           },
           'ol li:before': {
             fontWeight: '600',

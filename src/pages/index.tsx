@@ -24,7 +24,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     }} />
     <section className="py-5 md:py-10 lg:pt-10 lg:pb-5 bg-repeat-x">
       <Container className="max-w-3xl">
-        <h1 className="text-3.5xl font-bold md:text-4xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
+        <h1 className="text-3.5xl font-inter font-bold md:text-4xl text-dark-600 dark:text-gray-200 leading-tight mb-6">
           Hola, soy Javier Diaz
         </h1>
         <p className="text-gray-900 dark:text-gray-500 md:text-lg leading-loose mb-4">Soy <span className="font-semibold">Ingeniero de Software y Diseñador UI</span>. Vivo en Ciudad de México, Ajuaaaa!! Actualmente, estoy desarrollando plataformas y sitios web utilizando Jamstack y trabajando como Líder Técnico en <a className="font-semibold text-primary-300 hover:text-primary-400 transition duration-300 ease-in-out border-b-2 border-primary-300 hover:border-primary-400" href="https://bedu.org">Bedu</a>. Principalmente hago desarrollo <span className="font-medium text-yellow-600">front-end</span> pero también hago <span className="font-medium text-dark dark:text-gray-200">back-end</span>.</p>
@@ -32,7 +32,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:pt-5 md:pb-0">
       <Container className="max-w-3xl">
-        <h2 className="inline-block font-bold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+        <h2 className="inline-block font-inter font-bold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           Más popular
         </h2>
         <BlogPost frontMatter={ManyToManyPartOne} />
@@ -40,7 +40,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:py-10">
       <Container className="max-w-3xl">
-        <h2 className="inline-block font-bold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimos diseños</h2>
+        <h2 className="inline-block font-inter font-bold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">Últimos diseños</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <Shots shots={shots} />
         </div>
@@ -57,7 +57,7 @@ const IndexPage = ({ shots }: IIndexPageProps) => {
     </section>
     <section className="py-5 md:py-10">
       <Container className="max-w-3xl">
-        <h2 className="inline-block font-bold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
+        <h2 className="inline-block font-inter font-bold text-dark-900 dark:text-gray-200 text-xl md:text-2.5xl mb-6">
           Proyectos Open Source
         </h2>
         <div className="-mx-4">
