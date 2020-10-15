@@ -1,7 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-const plugin = require('tailwindcss/plugin');
 const mdx = require('@mdx-js/mdx');
-const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
   purge: {
@@ -30,11 +28,10 @@ module.exports = {
           },
         },
       ],
-      whitelist: ['dark-mode', 'bg-green-400', 'bg-alternative-400', 'bg-gray-400', 'h1', 'h2', 'h3', 'p', 'blockquote', 'strong'],
+      whitelist: ['bg-green-400', 'bg-alternative-400', 'bg-gray-400', 'h1', 'h2', 'h3', 'p', 'blockquote', 'strong'],
     },
   },
   theme: {
-    darkSelector: '.dark-mode',
     colors: {
       transparent: 'transparent',
       black: '#000000',
@@ -210,27 +207,28 @@ module.exports = {
     typography: (theme) => ({
       default: {
         css: {
-          color: theme('colors.gray.700'),
+          color: theme('colors.gray.300'),
           p: {
+            color: theme('colors.gray.300'),
             lineHeight: theme('lineHeight.loose'),
             fontFamily: `${theme('fontFamily.display')}`,
             letterSpacing: theme('letterSpacing.wide'),
           },
           h1: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.white'),
             fontFamily: `${theme('fontFamily.inter')}`,
           },
           h2: {
-            color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.inter')}`
+            color: theme('colors.white'),
+            fontFamily: `${theme('fontFamily.inter')}`,
           },
           h3: {
-            color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.inter')}`
+            color: theme('colors.white'),
+            fontFamily: `${theme('fontFamily.inter')}`,
           },
           h4: {
-            color: theme('colors.primary.300'),
-            fontFamily: `${theme('fontFamily.inter')}`
+            color: theme('colors.white'),
+            fontFamily: `${theme('fontFamily.inter')}`,
           },
           'ol li:before': {
             fontWeight: '600',
@@ -240,7 +238,7 @@ module.exports = {
             backgroundColor: theme('colors.gray.400'),
           },
           code: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.primary.300'),
           },
           a: {
             fontWeight: theme('fontWeight.bold'),
@@ -262,35 +260,20 @@ module.exports = {
             backgroundColor: theme('colors.gray.50'),
           },
           blockquote: {
-            color: theme('colors.gray.900'),
-            borderLeftColor: theme('colors.gray.200'),
+            color: theme('colors.gray.500'),
+            backgroundColor: theme('colors.dark.800'),
+            borderLeftColor: theme('colors.primary.300'),
           },
+          'blockquote p': {
+            margin: `0 ${theme('margin.2')}`,
+            color: theme('colors.gray.400'),
+          }
         },
       },
     }),
   },
-  variants: {
-    backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd', 'hover', 'responsive', 'focus'],
-    borderColor: ['dark', 'dark-focus', 'dark-focus-within', 'hover', 'responsive', 'focus'],
-    textColor: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
-    textOpacity: ['dark', 'dark-hover', 'dark-active', 'hover', 'responsive', 'focus'],
-    typography: ['responsive'],
-    spacing: ['responsive', 'hover', 'focus', 'last']
-  },
+  variants: {},
   plugins: [
-    plugin(function ({ addUtilities }) {
-      const filterUtilities = {
-        '.grayscale-none': {
-          filter: 'grayscale(0)',
-        },
-        '.grayscale-1': {
-          filter: 'grayscale(1)',
-        },
-      };
-
-      addUtilities(filterUtilities, ['responsive', 'hover']);
-    }),
-    require('tailwindcss-dark-mode')(),
     require('@tailwindcss/typography'),
   ],
   future: {

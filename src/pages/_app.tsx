@@ -1,5 +1,4 @@
 import 'tailwindcss/tailwind.css';
-import '@/assets/css/prose.css';
 import '@/assets/css/prism.css';
 import type { AppProps } from 'next/app';
 import Router from 'next/router';

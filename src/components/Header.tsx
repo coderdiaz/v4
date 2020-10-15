@@ -1,8 +1,6 @@
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import Avatar from '@/assets/images/avatar.png';
 import Container from '@/components/Container';
-const ColorSwitch = dynamic(() => import('./ColorSwitch'), { ssr: false });
 import SiteData from '@/seo-next.config';
 
 interface HeaderProps {
@@ -26,12 +24,9 @@ const Header = ({ language }: HeaderProps) => {
         <ul className="flex w-full justify-end items-center">
           {menus.map((item, index) => <li key={index} className="hidden md:block mr-2">
             <Link href={item.href}>
-              <a className="inline-block text-dark-800 hover:text-primary-900 hover:bg-gray-50 dark:text-gray-500 dark-hover:text-white dark-hover:bg-dark-600 rounded font-semibold py-2 px-4 transition duration-300 ease-in-out">{item.name}</a>
+              <a className="inline-block text-gray-500 hover:text-white hover:bg-dark-600 rounded font-semibold py-2 px-4 transition duration-300 ease-in-out">{item.name}</a>
             </Link>
           </li>)}
-          <li className="md:ml-10 mr-3 md:-mr-4 items-center">
-            <ColorSwitch />
-          </li>
           <li className="hidden">
             <button className="inline-flex items-center text-dark-500 md:bg-gray-50 md:hover:bg-gray-100 p-2" aria-label="Menu">
               <svg viewBox="0 0 20 20" className="w-6 h-6 inline-block align-middle flex-shrink-0">

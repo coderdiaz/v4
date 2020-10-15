@@ -24,12 +24,12 @@ export default function Layout({ children: content, frontMatter }) {
       <main className="py-5 md:py-10">
         <article className="mb-10">
           <Container className="max-w-3xl mb-10">
-            <h1 className="dark:text-white font-inter font-bold text-2xl md:text-2.5xl lg:text-3.5xl leading-tight mb-4">
+            <h1 className="text-white font-inter font-bold text-2xl md:text-2.5xl lg:text-3.5xl leading-tight mb-4">
               {frontMatter.title}
             </h1>
             <div className="flex items-center">
               <img className="w-6 rounded-full mr-2" src={Avatar} />
-              <div className="inline-block text-gray-600 dark:text-gray-400 text-base">
+              <div className="inline-block text-gray-400 text-base">
                 Javier Diaz / <time className="uppercase tracking-wider text-sm" dateTime={frontMatter.date.toISOString()}>
                   {format(parseISO(frontMatter.date.toISOString()), 'MMMM dd, yyyy', { locale: es })}
                 </time>
